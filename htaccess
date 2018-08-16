@@ -1,0 +1,13 @@
+Options -Indexes
+RewriteEngine on
+
+RewriteRule ^index.html$ /rajasthantourexpert/index.php [L]
+
+RewriteRule ^destinations.html$ /rajasthantourexpert/destinations.php [L]
+RewriteRule ^tour-packages.html$ /rajasthantourexpert/tour-packages.php [L]
+
+RewriteRule ^tours/([a-z-0-9]+).html$ /rajasthantourexpert/tours.php?tourid=$1 [L]
+RewriteRule ^(.*).html$ /rajasthantourexpert/page.php?pageid=$1 [L]
+
+ErrorDocument 404     /rajasthantourexpert/404.php
+

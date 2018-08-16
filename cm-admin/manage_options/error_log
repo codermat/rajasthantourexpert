@@ -1,0 +1,1 @@
+[24-Feb-2018 14:03:39 UTC] PHP Warning:  array_filter() expects parameter 1 to be array, boolean given in /home/ybisoftech/public_html/demo/gifti/admin-management/manage_options/add_edit.php on line 103
