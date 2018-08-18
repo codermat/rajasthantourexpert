@@ -35,8 +35,8 @@ class cm_db extends globals{
 {
 
 	$this->dbhost = 'localhost';
-	$this->dbuser = 'root';
-	$this->dbpassword ='';
+	$this->dbuser = 'king';
+	$this->dbpassword ='ysu7VCTBPvfaWPnQ';
 	$this->dbname = 'rajasthantourexpert';
 	
 }
