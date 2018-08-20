@@ -146,7 +146,7 @@ $adsinfo=unserialize($datainfo->option_value);
 									{
 									?>
 								<div class="control-group">
-							  <label class="control-label" for="typeahead">Add Slider Image <?php echo $i;?> : </label>
+							  <label class="control-label" for="typeahead">Add Slider Image <?php echo $i;?> (1660px * 623px): </label>
 							  <div class="controls">
 							 <input type="hidden"    name="option_value[image][]" value="<?php echo $sliderimages['image'][$i-1];?>" id="option_value_<?php echo $i;?>" class="span7"   />
 								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=option_value_<?php echo $i;?>&nonce=mktnonce" ></iframe>
@@ -158,7 +158,7 @@ $adsinfo=unserialize($datainfo->option_value);
 							  </div>
 							   </div>
 							   	<div class="control-group">
-							  <label class="control-label" for="typeahead">Image <?php echo $i;?> Link URL  : </label>
+							  <label class="control-label" for="typeahead">Image <?php echo $i;?> Title Text  : </label>
 							  <div class="controls">
 							 <input type="text"    name="option_value[link][]" value="<?php echo $sliderimages['link'][$i-1];?>"  class="span7"   />
 								

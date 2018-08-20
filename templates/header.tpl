@@ -56,7 +56,12 @@
     <header>
       <div class="logo_wrapper">
         <a href="{$siteurl}" class="logo">
-          <img src="{$templateurl}images/logo.png" alt="{$options.meta_tag_title}" class="img-responsive">        </a>      </div>
+		{if !$options.cm_logo}
+          <img src="{$templateurl}images/logo.png" alt="{$options.meta_tag_title}" title="{$options.meta_tag_title}" class="img-responsive">    
+   	{else}
+								<img src="{$options.cm_logo}" alt="{$options.meta_tag_title}" title="{$options.meta_tag_title}" class="img-responsive">     
+								{/if}
+								   </a>      </div>
     </header>
 
     <div class="menu_wrapper clearfix">
