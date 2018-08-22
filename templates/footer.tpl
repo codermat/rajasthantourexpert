@@ -9,15 +9,17 @@
         <div class="bot1_title">USEFUL LINKS</div>
 
         <ul class="ul1">
-<li><a href="#">HOME</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">About India</a></li>
+<li><a href="{$siteurl}">HOME</a></li>
+   {if $pagelist[1].title != ''} 
+<li><a href="{$siteurl}{$pagelist[1].seo_url}{$url_suffix}">{$pagelist[1].title}</a></li>
+{/if}
 <li><a href="#">Testimonials</a></li>
-<li><a href="#">Tour Packages</a></li>
-<li><a href="#">Destination</a></li>
-<li><a href="#">Car & Driver Hire</a></li>
-<li><a href="#">Contact Us</a></li>
-
+  <li><a href="{$siteurl}tour-packages{$url_suffix}">Tour Packages</a></li>
+  <li><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
+          <li><a href="#">Car & Driver Hire</a></li>
+   {if $pagelist[4].title != ''} 
+<li><a href="{$siteurl}{$pagelist[4].seo_url}{$url_suffix}">{$pagelist[4].title}</a></li>
+{/if}
         </ul>
       </div>
       <div class="col-sm-3">
@@ -58,23 +60,39 @@
       <div class="col-sm-3">
 
         <div class="logo2_wrapper">
-         <div>
-            <img src="{$templateurl}images/logo2.png" alt="" class="img-responsive"> </div>
-			<div class="topdiv"><strong>Address :</strong> 2, Near Loco, Yaadon ka Chowk, Hasanpura (A), Khatipura Road, 
-Jaipur 302006 (Rajasthan)
-<p><strong>Tel:</strong> +91- 8824101046</p>
-<p><strong>Email: </strong><a href="mailto:booking@rajasthantourexpert.com">booking@rajasthantourexpert.com</a> &nbsp; <a href="mailto:rajasthantourxpert@gmail.com">rajasthantourxpert@gmail.com</a></p>
-</div>
+       {if $options.footer_logo!=''}
+	     <div>
+            <img src="{$options.footer_logo}" class="img-responsive"> </div>
+			{else}
+			 <div>
+            <img src="{$templateurl}images/logo2.png" class="img-responsive"> </div>
 			
-			</div>
+			{/if}
+			<div class="topdiv">
+			{if $options.address!=''}
+			<strong>Address :</strong> {$options.address}
+{/if}
+{if $options.contact_no!=''}
+<p><strong>Tel:</strong> {$options.contact_no}</p>
+{/if}
+{if $options.admin_email!=''}
+<p><strong>Email: </strong> <a href="mailto:{$options.admin_email}">{$options.admin_email}</a></p>
+{/if}
+</div></div>
 
         <div class="bot1_newt">Follow Us</div>
 
         <div class="social_wrapper">
           <ul class="social clearfix">
-            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+		  {if $socialoptions.facebook!=''}
+            <li><a href="{$socialoptions.facebook}"><i class="fa fa-facebook-square"></i></a></li>
+			{/if}
+			 {if $socialoptions.linkedin!=''}
+            <li><a href="{$socialoptions.linkedin}"><i class="fa fa-linkedin"></i></a></li>
+			{/if}
+            {if $socialoptions.instagram!=''}
+		    <li><a href="{$socialoptions.instagram}"><i class="fa fa-instagram"></i></a></li>
+			{/if}
           </ul>
         </div>
 
@@ -83,12 +101,13 @@ Jaipur 302006 (Rajasthan)
     </div>
   </div>
 </div>
-
+{if $options.footer_copyright_text!=''}
 <div class="bot2_wrapper">
   <div class="container">
-    <div class="copyright">Copyright &copy; 2018. Rajasthan Tour Expert.</div>
+    <div class="copyright">{$options.footer_copyright_text}</div>
   </div>
 </div>
+{/if}
 </div>
 <script src="{$templateurl}js/bootstrap.min.js"></script>
 </body>

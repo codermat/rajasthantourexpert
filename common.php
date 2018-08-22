@@ -34,6 +34,9 @@ $smarty->assign('templateurl', TEMPLATE_URL);
 
 $socialoptions=array();
 $socialoptions=unserialize($newoption['social_media']);
+$socialoptions['facebook']=$socialoptions['Facebook'];
+$socialoptions['linkedin']=$socialoptions['LinkedIn'];
+$socialoptions['instagram']=$socialoptions['Instagram'];
 $socialoptions['pin']=$socialoptions['Pin Interest'];
 $socialoptions['gplus']=$socialoptions['Google Plus'];
 $socialoptions['rssfeed']=$socialoptions['RSS Feed'];

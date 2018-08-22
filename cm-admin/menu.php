@@ -18,7 +18,8 @@
 		
 		</ul>	
 		</li>	
-        	<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_testimonials/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_testimonials"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Testimonials </span></a></li>
+        	<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_services/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_services"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Services </span></a></li>
+			<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_testimonials/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_testimonials"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Testimonials </span></a></li>
 <li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_email_templates/')) {?> class="active" <?php } ?>><a href="<?php echo BASE_ADMIN_URL;?>manage_email_templates"><i class="icon-list-alt"></i><span class="hidden-tablet"> Email Templates</span></a></li>																		
 						<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_pages/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_pages"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Pages </span></a></li>	
 				<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_faq/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_faq"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage FAQ </span></a></li>

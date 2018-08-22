@@ -19,104 +19,27 @@
 
         <br><br>
       </div>
+	  {if $homefirstadinfo.image!=''}
       <div class="col-sm-6 col-md-3">
         <div class="banner1_wrapper">
-          <a href="#"><img src="{$templateurl}images/banner1.jpg" alt="" class="img-responsive"></a>        </div>
+
+          <a href="{$homefirstadinfo.link}"><img src="{$homefirstadinfo.image}"  class="img-responsive"></a> 
+       </div>
       </div>
-      <div class="col-sm-6 col-md-3">
+	  		  		  {/if} 
+					  {if $homesecondadinfo.image!=''}
+		 <div class="col-sm-6 col-md-3">
         <div class="banner1_wrapper">
-          <a href="#"><img src="{$templateurl}images/banner2.jpg" alt="" class="img-responsive"></a>        </div>
+				
+          <a href="{$homesecondadinfo.link}"><img src="{$homesecondadinfo.image}"  class="img-responsive"></a> 
+
+		         </div>
       </div>
+	  		  		  {/if} 
     </div>
   </div>
 </div>
-
-<div class="cars_wrapper clearfix">
- <div class="container"><h2>RAJASTHAN TOUR PACKAGES</h2></div>
-
-  <div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/tajmahal.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Golden Triangle Tour</span>
-        <span class="txt2">5 Nights / 6 Days</span>
-		<span class="txt2">Destinations : Delhi, Agra, Jaipur.</span>
-		</span>
-		 </a>  </div>
-  <div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/shekhawati.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Golden Triangle with Shekhawati</span>
-        <span class="txt2">6 Nights / 7 Days</span>
-		<span class="txt2">Destinations : Delhi, Agra, Jaipur, Mandawa.</span>
-		</span>
-		 </a>  </div>
-  <div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/romantic.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Romantic Rajasthan Tour</span>
-        <span class="txt2">8 Nights / 9 Days</span>
-		<span class="txt2">Destinations : Delhi, Agra, Jaipur, Jodhpur, Udaipur.</span>
-		</span>    </a>  </div>
-  <div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/enchanting.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Enchanting Rajasthan Tour</span>
-        <span class="txt2">13 Nights / 14 Days</span>
-		<span class="txt2">Destinations : Mandawa, Bikaner, Jaiselmer, Jodhpur, Udaipur.</span>
-		</span>    </a>  </div>
-  <div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/majestic.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Majestic Rajasthan Fort Tour</span>
-        <span class="txt2">17 Nights / 18 Days</span>
-		<span class="txt2">Destinations : Delhi, Agra, Madhogarh, Jaipur, ChhatraSagar, Udaipur, Rohet, Jaisalmer, Khimsar, Samode, Delhi.</span>
-		</span>    </a>  </div>
-		<div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/delhi.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Unforgettable Palace Tour</span>
-        <span class="txt2">14 Nights / 15 Days</span>
-		<span class="txt2">Destinations : Delhi, Mukundgarh, Pushkar, Jodhpur, Ranakpur, Mount Abu, Udaipur, Kota, Jaipur, Agra, Delhi.</span>
-		</span>    </a>  </div>
-		<div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/quickrajasthan.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Quick Rajasthan Tour</span>
-        <span class="txt2">05 Nights / 06 Days</span>
-		<span class="txt2">Destinations : Delhi, Neemrana, Bundi, Ranakpur, Jodhpur.</span>
-		</span>    </a>  </div>
-		<div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/discoverrajasthan.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Discover Rajasthan Tour</span>
-        <span class="txt2">13 Nights / 14 Days</span>
-		<span class="txt2">Destinations : Ranthambore, Jaipur, Bikaner, Jaisalmer, Jodhpur, Pushkar, Udaipur, Mount abu.</span>
-		</span>    </a>  </div>
-		<div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/ranakpur.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Grand Rajasthan Tour</span>
-        <span class="txt2">12 Nights / 13 Days</span>
-		<span class="txt2">Destinations : Udaipur, Shreenath ji, Ranakpur, Jodhpur, Manwar, Jaisalmer, Bikaner, Jaipur, Agra, Delhi.</span>
-		</span>    </a>  </div>
-		<div class="car1 clearfix">
-    <a href="#" class="clearfix minheight0">
-      <figure><img src="{$templateurl}images/wildlife.jpg" alt="" class="img-responsive"></figure>
-      <span class="caption">
-        <span class="txt1">Wildlife Rajasthan Tour</span>
-        <span class="txt2">7 Nights / 8 Days</span>
-		<span class="txt2">Destinations : Jaipur, Ranthambore, Pushkar, Udaipur.</span>
-		</span>    </a>  </div>
-</div>
+{include file="home_tour_package.tpl" }
 
 <div id="parallax1" class="parallax">
   <div class="bg1 parallax-bg"></div>
@@ -133,204 +56,9 @@
   </div>
 </div>
 
-<div class="vehicles_wrapper">
-  <div class="container">
+{include file="home_destinations.tpl" }
 
-    <h2>RAJASTHAN TOURIST DESTINATIONS</h2>
+{include file="home_services.tpl" }
 
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-3">
-		<div class="vehicle1 clearfix">
-		<a href="gallery.html" class="clearfix">
-		<figure>
-		<img src="{$templateurl}images/jaipur.jpg" alt="" class="img-responsive">
-		<span class="txt1">JAIPUR</span>
-		<span class="txt2"><i>more details</i></span>            </figure>
-		<span class="caption">
-		<span class="txt3">Jaipur, popularly known as the "Pink City", and "Paris of India", is the capital of Rajasthan state.</span>            </span>          </a>        </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/udaipur.jpg" alt="" class="img-responsive">
-              <span class="txt1">UDAIPUR</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">Udaipur is known as the Venice of the east. It is also called the city of lakes. </span>            </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/jodhpur.jpg" alt="" class="img-responsive">
-              <span class="txt1">Jodhpur</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">Jodhpur is also called as the "Sun City". Jodhpur stands at the edge of the Thar Desert & was citadel...</span>  </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/jaisalmer.jpg" alt="" class="img-responsive">
-              <span class="txt1">JAISALMER</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">The name JAISALMER evokes a vivid picture of sheer magic and brilliance of the desert. The hostile not with... </span>  </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/pushkar.jpg" alt="" class="img-responsive">
-              <span class="txt1">AJMER (PUSHKAR)</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">355 km southwest of Delhi lies the holy small town of Pushkar in the state of Rajasthan. </span>  </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/bikaner.jpg" alt="" class="img-responsive">
-              <span class="txt1">BIKANER</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">Lying in the north of the desert state, the city is dotted with scores of sand dunes. </span>  </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/ranthambhor.jpg" alt="" class="img-responsive">
-              <span class="txt1">RANTHAMBORE</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">The name JAISALMER evokes a vivid picture of sheer magic and brilliance of the desert. </span>  </span>          </a> </div>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-3">
-        <div class="vehicle1 clearfix">
-          <a href="gallery.html" class="clearfix">
-            <figure>
-              <img src="{$templateurl}images/chittorghar.jpg" alt="" class="img-responsive">
-              <span class="txt1">CHITTORGARH</span>
-              <span class="txt2"><i>more details</i></span>            </figure>
-            <span class="caption">
-              <span class="txt3">Chittorgarh has been a witness to some of the bloodiest battles fought on Indian soil.  </span>  </span>          </a> </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container darkbeground">
-<h2>OUR SERVICES</h2>
-        <!-- Boxes de Acoes -->
-    	<div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-suitcase"></i></div>
-					<div class="info">
-						<h3 class="title">TOUR PACKAGES</h3>
-						<p>Our Hot Tour Packages are designed in a tourist friendly manner to suit all.	</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>
-			
-        <div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-h-square"></i></div>
-					<div class="info">
-						<h3 class="title">HOTEL BOOKING</h3>
-    					<p>A great selection and professional service at reasonable prices.	</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>
-			
-       <div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-ticket"></i></div>
-					<div class="info">
-						<h3 class="title">AIR & TRAIN TICKET</h3>
-    					<p>Our offices in all over Rajasthan, to provide you air & train ticketing .</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>		
-		<div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-car"></i></div>
-					<div class="info"><h3 class="title">CAR RENTAL</h3>
-    					<p>Vehicles available in our fleet are Toyota Innova, Etios, Bus and more.</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>
-		<div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-user"></i></div>
-					<div class="info">
-						<h3 class="title">EXPERT PLAN</h3>
-    					<p>Desert & Jungle camping, camel safaris, Jeep safaris, hoarse safaris, etc.</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>
-		<div class="col-xs-12 col-sm-2 col-lg-2">
-			<div class="box">							
-				<div class="icon">
-					<div class="image"><i class="fa fa-shield"></i></div>
-					<div class="info">
-						<h3 class="title">Best Service</h3>
-    					<p>Rajasthan Tour Expert giving consistent service for our clients.</p>
-						<div class="more">
-							<a href="#" title="Title Link">
-								Read More <i class="fa fa-angle-double-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="space"></div>
-			</div> 
-		</div>    
-		<!-- /Boxes de Acoes -->
-
-</div>
 {include file="footer.tpl" }
 
