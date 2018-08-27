@@ -27,16 +27,10 @@
         <div class="bot1_title">RAJASTHAN TOUR PACKAGES</div>
 
         <ul class="ul1">
-<li><a href="#">Golden Triangle Tour Packages  </a></li>
-<li><a href="#">Golden Triangle with Shekhawati</a></li>
-<li><a href="#">Romantic Rajasthan Tour</a></li>
-<li><a href="#">Enchanting Rajasthan Tour </a></li>
-<li><a href="#">Majestic Rajasthan Tour</a></li>
-<li><a href="#">Unforgettable Palace Tour</a></li>
-<li><a href="#">Quick Rajasthan Tour</a></li>
-<li><a href="#">Discover Rajasthan Tour</a></li>
-<li><a href="#">Grand Rajasthan Tour</a></li>
-<li><a href="#">Rajasthan Wildlife Tour</a></li>
+		 {foreach from=$footertourpackagelist key=footertourpackagekey item=footertourpackageinfo name=footertourpackageid}
+          <li><a href="{$siteurl}tour_packages/{$footertourpackageinfo.seo_url}{$url_suffix}">{$footertourpackageinfo.title}</a></li>
+		   {/foreach}  
+
         </ul>
 		
 		
@@ -47,14 +41,10 @@
         <div class="bot1_title">TOURIST DESTINATIONS</div>
 
         <ul class="ul1">
-          <li><a href="#">Jaipur</a></li>
-<li><a href="#">Udaipur</a></li>
-<li><a href="#">Jodhpur</a></li>
-<li><a href="#">Jaisalmer</a></li>
-<li><a href="#">Ajmer and Pushkar </a></li>
-<li><a href="#">Bikaner</a></li>
-<li><a href="#">Ranthambore</a></li>
-<li><a href="#">Chittorgarh</a></li>
+		 {foreach from=$footerdestinationslist key=footerdestinationkey item=footerdestinationinfo name=footerdestinationid}
+          <li><a href="{$siteurl}destinations/{$footerdestinationinfo.seo_url}{$url_suffix}">{$footerdestinationinfo.title}</a></li>
+		   {/foreach}  
+
         </ul>
       </div>
       <div class="col-sm-3">

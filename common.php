@@ -59,5 +59,26 @@ for($i=0;$i<count($pagedata);$i++)
 $smarty->assign('pagelist', $pagelist);
 ///////// End of Code to Get Page List for Menu ////////
 
+////////// Code Starts for Tour Sidebar Advertisement ////////
+$sidebarfirstadinfo=unserialize($newoption['sidebar_image_ad_1']);
+$smarty->assign("sidebarfirstadinfo", $sidebarfirstadinfo);
+
+$sidebarsecondadinfo=unserialize($newoption['sidebar_image_ad_2']);
+$smarty->assign("sidebarsecondadinfo", $sidebarsecondadinfo);
+
+///////// End of Code for Tour Sidebar Advertisement ////////
+//////// Code Start to Footer Destination Link ////////
+$footertourpackagelist=$function->object_to_array($function->get_data_list(GLOBAL_TOUR_PACKAGE_TABLE,"id,title,seo_url",'t','in_footer',$orderbyfield='title, title',$order='asc',1,8));
+
+$smarty->assign("footertourpackagelist", $footertourpackagelist);
+
+///////// End of Code to Footer Destination Link ////////
+//////// Code Start to Footer Destination Link ////////
+$footerdestinationslist=$function->object_to_array($function->get_data_list(GLOBAL_DESTINATIONS_TABLE,"id,title,seo_url",'t','in_footer',$orderbyfield='title, title',$order='asc',1,8));
+
+$smarty->assign("footerdestinationslist", $footerdestinationslist);
+
+///////// End of Code to Footer Destination Link ////////
+
 
 ?>

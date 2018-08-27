@@ -4,9 +4,16 @@ RewriteEngine on
 RewriteRule ^index.html$ /rajasthantourexpert/index.php [L]
 
 RewriteRule ^destinations.html$ /rajasthantourexpert/destinations.php [L]
+RewriteRule ^destinations/([a-z-0-9]+).html$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
+RewriteRule ^destinations/([a-z-0-9]+)/([a-z-0-9]+).html$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
+RewriteRule ^destinations.htm$ /rajasthantourexpert/destinations.php [L]
+RewriteRule ^destinations/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
+RewriteRule ^destinations/([a-z-0-9]+)/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
+
 RewriteRule ^tour-packages.html$ /rajasthantourexpert/tour-packages.php [L]
 
 RewriteRule ^tours/([a-z-0-9]+).html$ /rajasthantourexpert/tours.php?tourid=$1 [L]
+
 RewriteRule ^(.*).html$ /rajasthantourexpert/page.php?pageid=$1 [L]
 
 ErrorDocument 404     /rajasthantourexpert/404.php

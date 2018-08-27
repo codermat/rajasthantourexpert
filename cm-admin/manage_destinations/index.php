@@ -33,7 +33,7 @@ require_once('module.php');
 					
 					<?php
 					/////////// Fetch data from database starts here /////////
-					$categoryinfos="select *,(select title from ".MODULE_TABLE_NAME." pcattable where cattable.pcatid=pcattable.id ) parent_category from ".MODULE_TABLE_NAME." cattable  order by id desc "; 
+					$categoryinfos="select * from ".MODULE_TABLE_NAME."   order by id desc "; 
 					$results= $function->get_results($categoryinfos);
 			
 				
@@ -44,10 +44,10 @@ require_once('module.php');
 						  <thead>
 							  <tr class="center">
 							    <th class="center">ID</th>								
-								  <th class="center">Title</th>
-							
-								  <th class="center">Featured Image</th>
-								 <th class="center">Footer Link</th>
+								  <th class="center">Title</th>		
+                                   <th class="center">Preview</th>					
+								  <th class="center">Featured Image</th>								
+								   <th class="center">Is featured</th>
 								  <th class="center">Status</th>
 								  <th class="center">Actions</th>
 							  </tr>
@@ -60,16 +60,16 @@ require_once('module.php');
 							<td><?php echo $record->id;?></td>
 								
 								<td><?php echo $record->title;?></td>
-								
+							<td><a href="<?php echo $function->get_seo_url('destinations/'.$record->seo_url);?>" target="_blank"><?php echo $function->get_seo_url('destinations/'.$record->seo_url);?></a></td>
 								<td class="center" align="center">
 								<?php if(isset($record->featured_image) && $record->featured_image!='') { ?>
 								<img src="<?php echo SITE_URL;?>thumb.php?src=<?php echo $record->featured_image;?>&w=50&h=50&q=90&zc=0" />
 								<?php } ?>
 								 </td>
 								<td class="center">
-								<?php if($record->in_footer=="t") { ?>
+								<?php if($record->is_featured=="t") { ?>
 									<span class="label label-success">Yes</span>
-									<?php }elseif($record->in_footer=="f")
+									<?php }elseif($record->is_featured=="f")
 									{
 									?>
 									<span class="label label-important">No</span>

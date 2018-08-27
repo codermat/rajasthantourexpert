@@ -28,14 +28,13 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 						<?php } ?>
 						  <fieldset>
 							<div class="control-group">
-							  <label class="control-label" for="typeahead">Title</label>
+							  <label class="control-label" for="typeahead">Title*</label>
 							  <div class="controls">
 								<input type="text" name="title" required class="span7 typeahead" value="<?php if(isset($datainfo->title)) { echo $datainfo->title; } ?>" id="title" >
 								
 							  </div>
 							</div>
 							
-						
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Meta tag Keywords</label>
 							  <div class="controls">
@@ -43,6 +42,7 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								
 							  </div>
 							</div>
+							
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Meta tag Descriptions</label>
 							  <div class="controls">
@@ -50,23 +50,25 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								
 							  </div>
 							</div>
+							
 							<div class="control-group">
-							  <label class="control-label" for="typeahead">Featured Image</label>
+							  <label class="control-label" for="typeahead">Thumbnail Image</label>
 							  <div class="controls">
 								<input type="hidden"    name="featured_image" value="<?php  if(isset($datainfo->featured_image)) {  echo $datainfo->featured_image; } ?>" id="featured_image" class="span7"   />
-								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=featured_image&nonce=mktnonce" ></iframe>
+								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=featured_image&nonce=mktnonce" ></iframe> (Recommended -> Width: 348px & Height: 250px;)
 <?php if(isset($datainfo->featured_image) && $datainfo->featured_image!='') { ?>
 								<img src="<?php echo SITE_URL;?>thumb.php?src=<?php echo $datainfo->featured_image;?>&w=80&h=80&q=90&zc=0" />
 								<?php } ?>
 							  </div>
 							</div>
 							<div class="control-group">
-							  <label class="control-label" for="typeahead">Short Desc.</label>
+							  <label class="control-label" for="typeahead">Short Desc. (500 char.)</label>
 							  <div class="controls">
-								<?php
+								
+							<?php
 $oFCKeditor = new FCKeditor('short_desc') ;
 $oFCKeditor->BasePath= '../fckeditor/' ;
-$oFCKeditor->Value=$datainfo->short_desc;
+$oFCKeditor->Value=stripslashes($datainfo->short_desc);
 
 $oFCKeditor->Create() ;
 ?>
@@ -78,14 +80,48 @@ $oFCKeditor->Create() ;
 								<?php
 $oFCKeditor = new FCKeditor('desc') ;
 $oFCKeditor->BasePath= '../fckeditor/' ;
-$oFCKeditor->Value=$datainfo->desc;
+$oFCKeditor->Value=stripslashes($datainfo->desc);
 
 $oFCKeditor->Create() ;
 ?>
 							  </div>
 							</div>
+							<?php 
+							if(isset($datainfo->other_images) && $datainfo->other_images!='')
+							{
+								$other_images= unserialize($datainfo->other_images);
+							}else {
+								$other_images=array();
+							}
+							for($i=0;$i<10;$i++) {?>
+								<div class="control-group">
+							  <label class="control-label" for="typeahead">Other Images <?php echo $i+1;?></label>
+							  <div class="controls">
+								<input type="text"    name="other_images[]" value="<?php  if(isset($other_images[$i])) {  echo $other_images[$i]; } ?>" id="other_images_<?php echo $i;?>" class="span7"   />
+								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=other_images_<?php echo $i;?>&nonce=mktnonce" ></iframe> (Recommended -> Width: 1063px & Height: 400px;)
+<?php if(isset($other_images[$i]) && $other_images[$i]!='') { ?>
+								<img src="<?php echo SITE_URL;?>thumb.php?src=<?php echo $other_images[$i];?>&w=80&h=80&q=90&zc=0" />
+								<?php } ?>
+							  </div>
+							</div>
+								<?php } ?>
+							 <div class="control-group">
+								<label class="control-label" for="selectError">Featured</label>
+								<div class="controls">
+								  <select id="is_featured" name="is_featured" data-rel="chosen">
+								   <?php if(isset($datainfo->is_featured)) { ?>								   
+									<option value="t" <?php if($datainfo->is_featured=='t') { echo "selected"; } ?>>Yes</option>
+									<option value="f" <?php if($datainfo->is_featured=='f') { echo "selected"; } ?>>No</option>
+									 <?php }else { ?>
+									 <option value="t"  selected>Yes</option>
+									<option value="f">No</option>
+									 <?php } ?>
+									
+								  </select>
+								</div>
+							  </div>
 							
-						 <div class="control-group">
+							 <div class="control-group">
 								<label class="control-label" for="selectError">Show in Footer</label>
 								<div class="controls">
 								  <select id="in_footer" name="in_footer" data-rel="chosen">
@@ -100,7 +136,7 @@ $oFCKeditor->Create() ;
 								  </select>
 								</div>
 							  </div>
-							  
+							
 							  <div class="control-group">
 								<label class="control-label" for="selectError">Status</label>
 								<div class="controls">

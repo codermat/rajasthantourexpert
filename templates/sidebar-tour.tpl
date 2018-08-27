@@ -26,16 +26,22 @@
     </div>
 
         <div class="row">
-          <div class="col-sm-6 col-md-12">
-            <div class="banner1_wrapper">
-              <a href="#"><img src="{$templateurl}images/banner1.jpg" alt="" class="img-responsive"></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-12">
-            <div class="banner1_wrapper">
-              <a href="#"><img src="{$templateurl}images/banner2.jpg" alt="" class="img-responsive"></a>
-            </div>
-          </div>
+		 {if $sidebarfirstadinfo.image!=''}
+       <div class="col-sm-6 col-md-12">
+        <div class="banner1_wrapper">
+
+          <a href="{$sidebarfirstadinfo.link}"><img src="{$sidebarfirstadinfo.image}"  class="img-responsive"></a> 
+       </div>
+      </div>
+	  		  		  {/if}
+       {if $sidebarsecondadinfo.image!=''}
+       <div class="col-sm-6 col-md-12">
+        <div class="banner1_wrapper">
+
+          <a href="{$sidebarsecondadinfo.link}"><img src="{$sidebarsecondadinfo.image}"  class="img-responsive"></a> 
+       </div>
+      </div>
+	  		  		  {/if}
         </div>
 
 

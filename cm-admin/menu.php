@@ -10,7 +10,8 @@
 			
 		</ul>	
 		</li>
-					<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_tours/')) {?> class="active" <?php } ?>>
+						
+		<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_tours/')) {?> class="active" <?php } ?>>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Manage Tours</span><span class="label label-important"></span></a>
 													<ul style="display:none;">
 				<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_tours/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_tours"><i class="icon-tasks"></i><span class="hidden-tablet"> View Tours</span></a></li>	
@@ -18,6 +19,14 @@
 		
 		</ul>	
 		</li>	
+		<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_destinations/')) {?> class="active" <?php } ?>>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Manage Destinations</span><span class="label label-important"></span></a>
+													<ul style="display:none;">
+				<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_destinations/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_destinations"><i class="icon-tasks"></i><span class="hidden-tablet"> View Destinations</span></a></li>	
+								
+		
+		</ul>	
+		</li>
         	<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_services/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_services"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Services </span></a></li>
 			<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_testimonials/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_testimonials"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Testimonials </span></a></li>
 <li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_email_templates/')) {?> class="active" <?php } ?>><a href="<?php echo BASE_ADMIN_URL;?>manage_email_templates"><i class="icon-list-alt"></i><span class="hidden-tablet"> Email Templates</span></a></li>																		
