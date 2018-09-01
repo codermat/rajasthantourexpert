@@ -57,19 +57,7 @@
 </div>
        
        <div class="newspace"></div>
-	   
-       	{if $datainfo.duration!=''}
-		  <div class="col-sm-6 bgtop">
-		  <div class="row">
-	      <div id="boxleft"><strong>DURATION :</strong> {$datainfo.duration}</div>
-          </div></div>
-          {/if}
-          	{if $datainfo.destination!=''}
-		  <div class="col-sm-6 bgtop">
-		  <div class="row">
-           <div id="boxright"> <strong>DESTINATIONS:</strong> {$datainfo.destination} </div>
-          </div></div>
-          {/if} 
+	  
 	     <div class="clearfix"></div>
 	 <hr>
           <div>

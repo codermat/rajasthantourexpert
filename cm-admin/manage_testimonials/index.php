@@ -44,7 +44,7 @@ require_once('module.php');
 							  <tr class="center">
 							    <th class="center">ID</th>								
 								  <th class="center">Author</th>
-								 
+								    <th class="center">Is featured</th>
 								  <th class="center">Status</th>
 								  <th class="center">Actions</th>
 							  </tr>
@@ -57,6 +57,17 @@ require_once('module.php');
 							<td><?php echo $record->id;?></td>
 								
 								<td><?php echo $record->author;?></td>
+								<td class="center">
+								<?php if($record->is_featured=="t") { ?>
+									<span class="label label-success">Yes</span>
+									<?php }elseif($record->is_featured=="f")
+									{
+									?>
+									<span class="label label-important">No</span>
+									<?php
+									}
+									 ?>
+								</td>
 								<td class="center">
 								<?php if($record->status=="t") { ?>
 									<span class="label label-success">Active</span>

@@ -15,7 +15,7 @@ if(isset($_REQUEST['paged']) && $_REQUEST['paged']!='')
 {
 	$paged=1;
 }
-$destinationslist=$function->object_to_array($function->get_data_list(GLOBAL_DESTINATIONS_TABLE,"id,title,seo_url,short_desc,featured_image",'t','is_featured',$orderbyfield='title, title',$order='asc',1,16));
+$destinationslist=$function->object_to_array($function->get_data_list(GLOBAL_DESTINATIONS_TABLE,"id,title,seo_url,short_desc,featured_image",'t','status',$orderbyfield='title, title',$order='asc',1,16));
 
 $smarty->assign("destinationslist", $destinationslist);
 

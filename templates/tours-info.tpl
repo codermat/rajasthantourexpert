@@ -87,37 +87,10 @@
 
        
  <div class="newspace"></div>
-        <h2>Related Tour </h2>
-<div class="row">
-          <div class="col-sm-4">
-            <div class="rate1">
-              <div class="txt1">Tour Packages 1</div>
-              <figure><img src="{$templateurl}images/t1.jpg" alt="" class="img-responsive"></figure>
-              <div class="txt2">Nulla fringilla lacinia facilisis. Nunc rutrum scelerisque mi, a convallis elit ullamcorper id. Aenean sed ante at urna rutrum tempor a at risus. Vivamus congue nisi sed urna egestas, in imperdiet tortor facilisis. </div>
-              
-              <a href="#" class="btn-default btn1">read more</a>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="rate1">
-              <div class="txt1">Tour Packages 1</div>
-              <figure><img src="{$templateurl}images/t2.jpg" alt="" class="img-responsive"></figure>
-              <div class="txt2">Quisque efficitur dui ipsum, nec tempus augue luctus nec. Mauris pretium lectus mi, ut volutpat felis bibendum ac. Maecenas consectetur scelerisque tincidunt. Nunc tincidunt ante augue, a vestibulum quam molestie et. </div>
-             
-              <a href="#" class="btn-default btn1">read more</a>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="rate1">
-              <div class="txt1">Tour Packages 1</div>
-              <figure><img src="{$templateurl}images/t3.jpg" alt="" class="img-responsive"></figure>
-              <div class="txt2">Nulla fringilla lacinia facilisis. Nunc rutrum scelerisque mi, a convallis elit ullamcorper id. Aenean sed ante at urna rutrum tempor a at risus. Vivamus congue nisi sed urna egestas, in imperdiet tortor facilisis. </div>
-             
-              <a href="#" class="btn-default btn1">read more</a>
-            </div>
-          </div>
-          
-        </div>
+ 
+ {include file="related-tours.tpl" }
+
+
 
       </div>
      {include file="sidebar-tour.tpl" }

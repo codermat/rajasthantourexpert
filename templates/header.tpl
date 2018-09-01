@@ -78,8 +78,17 @@
            	 <li {if $datainfo.seo_url eq $pagelist[1].seo_url}class="active"{/if}><a href="{$siteurl}{$pagelist[1].seo_url}{$url_suffix}">{$pagelist[1].title}</a></li>
              {/if}
 
-            <li {if $activepage eq 'tour-packages'}class="active"{/if}><a href="{$siteurl}tour-packages{$url_suffix}">Tour Packages</a></li>
-            <li {if $activepage eq 'destinations'}class="active"{/if}><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
+            <li class="{if $activepage eq 'tour-packages'}active {/if} sub-menu sub-menu-1"><a href="{$siteurl}tour-packages{$url_suffix}">Tour Packages<i class="fa fa-angle-down"></i></a>
+			 <ul>
+			    {foreach from=$menutourpackagelist key=menutourpackagekey item=menutourpackageinfo name=menutourpackageid}
+          <li><a href="{$siteurl}tour-packages/{$menutourpackageinfo.seo_url}{$url_suffix}">{$menutourpackageinfo.title}</a></li>
+		   {/foreach}  
+			                 
+              </ul>
+			</li>
+      
+		   
+		    <li {if $activepage eq 'destinations'}class="active"{/if}><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
             
            
             <li><a href="#">Car & Driver Hire</a></li>

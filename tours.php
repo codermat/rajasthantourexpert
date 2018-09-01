@@ -27,6 +27,13 @@ $bodyclass='not-front page-about';
 $smarty->assign("bodyclass", $bodyclass);
 
 $smarty->assign("datainfo", $tourinfo);
+
+///////////// Code Start to get Related Tours List /////////
+$relatedtourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image",$tourinfo['tourpackageid'],'tourpackageid',$orderbyfield='rand()',$order='asc',1,6));
+$smarty->assign("relatedtourslist", $relatedtourslist);
+////////////// End of Code to Get Related Tours List ////////////
+
+
 $smarty->display('tours-info.tpl');
 
 

@@ -2,6 +2,8 @@ Options -Indexes
 RewriteEngine on
 
 RewriteRule ^index.html$ /rajasthantourexpert/index.php [L]
+RewriteRule ^testimonials.html$ /rajasthantourexpert/testimonials.php [L]
+RewriteRule ^testimonials.htm$ /rajasthantourexpert/testimonials.php [L]
 
 RewriteRule ^destinations.html$ /rajasthantourexpert/destinations.php [L]
 RewriteRule ^destinations/([a-z-0-9]+).html$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
@@ -11,6 +13,9 @@ RewriteRule ^destinations/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-inf
 RewriteRule ^destinations/([a-z-0-9]+)/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
 
 RewriteRule ^tour-packages.html$ /rajasthantourexpert/tour-packages.php [L]
+RewriteRule ^tour-packages/([a-z-0-9]+).html$ /rajasthantourexpert/tour-packages.php?tourpackageid=$1 [L]
+RewriteRule ^tour-packages/([a-z-0-9]+)/([a-z-0-9]+).html$ /rajasthantourexpert/tour-packages.php?tourpackageid=$1&paged=$2 [L]
+
 
 RewriteRule ^tours/([a-z-0-9]+).html$ /rajasthantourexpert/tours.php?tourid=$1 [L]
 

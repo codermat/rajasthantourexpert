@@ -31,6 +31,12 @@ $smarty->assign("datainfo", $pageinfo);
 $is_home='false';
 $smarty->assign("is_home", $is_home);
 
+///////// Code Start to Get Featured Testimonials info ///////////////
+$testimonialslist=$function->object_to_array($function->get_data_list(GLOBAL_TESTIMONIALS_TABLE,"*",'t','is_featured',$orderbyfield='rand(), author',$order='asc',1,3));
+
+$smarty->assign("testimonialslist", $testimonialslist);
+
+////////// End of Code to Get Featured Testimonials /////////////
 if($pageinfo['id']!='')
 {
 	if($pageinfo['pagetype']=='contact-us')

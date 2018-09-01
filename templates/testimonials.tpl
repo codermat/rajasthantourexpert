@@ -1,10 +1,10 @@
 {include file="header.tpl" }
 <div class="page-title">
   <div class="block-info">
-    <div class="header-text">{$datainfo.title}</div>
+    <div class="header-text">Testimonials</div>
     <div class="breadcrumbs1_wrapper">
       <div class="">
-        <div class="breadcrumbs1"><a href="{$siteurl}">Home</a><span>/</span>{$datainfo.title}</div>
+        <div class="breadcrumbs1"><a href="{$siteurl}">Home</a><span>/</span>testimonials</div>
       </div>
     </div>
   </div>
@@ -22,21 +22,9 @@
     <div class="row">
       <div class="col-sm-12 col-md-9 col-lg-9">
 
-        <h1>{$datainfo.title}</h1>
+        <h1>Testimonials</h1>
 
-        <div class="row">
-         
-          <div class="col-sm-12">
-
-          {$datainfo.desc|stripslashes}
-
-          </div>
-        </div>
-
-       <br>
-
-        <h2>Testimonials</h2>
-
+   
         <div class="row">
 		 {foreach from=$testimonialslist key=testimonialkey item=testimonialinfo name=testimonialid}
           <div class="col-sm-4">
@@ -52,11 +40,7 @@
        
         </div>
 
-        <br>
-
-        <p>
-          <a href="{$siteurl}testimonials.html" class="btn-default btn1">read more testimonials</a>
-        </p>
+   
 
 
       </div>

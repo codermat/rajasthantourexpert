@@ -88,7 +88,14 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Short Desc. (500 char.)</label>
 							  <div class="controls">
-								<textarea name="short_desc" maxlength="500" class="span7" rows="5"   id="short_desc" ><?php  if(isset($datainfo->short_desc)) {  echo $datainfo->short_desc; } ?></textarea>
+								
+							<?php
+$oFCKeditor = new FCKeditor('short_desc') ;
+$oFCKeditor->BasePath= '../fckeditor/' ;
+$oFCKeditor->Value=stripslashes($datainfo->short_desc);
+
+$oFCKeditor->Create() ;
+?>
 							  </div>
 							</div>
 							<div class="control-group">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2018 at 04:19 AM
+-- Generation Time: Sep 01, 2018 at 09:12 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -54,20 +54,6 @@ INSERT INTO `cm_destinations` (`id`, `title`, `seo_url`, `meta_tag_keywords`, `m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cm_faq`
---
-
-CREATE TABLE IF NOT EXISTS `cm_faq` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `question` varchar(500) NOT NULL,
-  `answer` text NOT NULL,
-  `status` enum('t','f') NOT NULL DEFAULT 't',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cm_options`
 --
 
@@ -78,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `cm_options` (
   `option_name` varchar(100) NOT NULL,
   `option_value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `cm_options`
@@ -102,7 +88,8 @@ INSERT INTO `cm_options` (`id`, `title`, `type`, `option_name`, `option_value`) 
 (38, 'Home Page First Image Ad', 'imageads', 'home_image_ad_1', 'a:2:{s:5:"image";s:73:"http://localhost/rajasthantourexpert/uploads/08-18/1534823036_banner2.jpg";s:4:"link";s:0:"";}'),
 (39, 'Home Page Second Image Ad', 'imageads', 'home_image_ad_2', 'a:2:{s:5:"image";s:73:"http://localhost/rajasthantourexpert/uploads/08-18/1534821783_banner1.jpg";s:4:"link";s:46:"http://localhost/rajasthantourexpert/cm-admin/";}'),
 (40, 'Sidebar Ad 1', 'imageads', 'sidebar_image_ad_1', 'a:2:{s:5:"image";s:73:"http://localhost/rajasthantourexpert/uploads/08-18/1534823036_banner2.jpg";s:4:"link";s:46:"http://localhost/rajasthantourexpert/cm-admin/";}'),
-(41, 'Sidebar Ad 2', 'imageads', 'sidebar_image_ad_2', 'a:2:{s:5:"image";s:73:"http://localhost/rajasthantourexpert/uploads/08-18/1534821783_banner1.jpg";s:4:"link";s:46:"http://localhost/rajasthantourexpert/cm-admin/";}');
+(41, 'Sidebar Ad 2', 'imageads', 'sidebar_image_ad_2', 'a:2:{s:5:"image";s:73:"http://localhost/rajasthantourexpert/uploads/08-18/1534821783_banner1.jpg";s:4:"link";s:46:"http://localhost/rajasthantourexpert/cm-admin/";}'),
+(42, 'Trip Advisor Code', 'textarea', 'sidebar_trip_advisor_code', '<div id=\\"TA_selfserveprop380\\" class=\\"TA_selfserveprop\\">\r\n<ul id=\\"rmF8in8wYi\\" class=\\"TA_links Q6gibnUTu\\">\r\n<li id=\\"9ke81lGN\\" class=\\"96mczPBnA\\">\r\n<a target=\\"_blank\\" href=\\"https://www.tripadvisor.com/\\"><img src=\\"https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png\\" alt=\\"TripAdvisor\\"/></a>\r\n</li>\r\n</ul>\r\n</div>\r\n<script async src=\\"https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=380&amp;locationId=7374063&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2\\"></script>');
 
 -- --------------------------------------------------------
 
@@ -160,6 +147,29 @@ INSERT INTO `cm_services` (`id`, `title`, `service_icon`, `service_desc`, `read_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cm_testimonials`
+--
+
+CREATE TABLE IF NOT EXISTS `cm_testimonials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` varchar(500) NOT NULL,
+  `testimonials_desc` text NOT NULL,
+  `is_featured` enum('t','f') NOT NULL DEFAULT 'f',
+  `status` enum('t','f') NOT NULL DEFAULT 't',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `cm_testimonials`
+--
+
+INSERT INTO `cm_testimonials` (`id`, `author`, `testimonials_desc`, `is_featured`, `status`) VALUES
+(1, 'Scott | Houston, TX', 'Curabitur elementum, diam ut rhoncus venenatis, erat nulla dictum odio, id laoreet lacus sapien in ex. Etiam pellentesque sollicitudin nibh vel accumsan. Sed tempus eget tortor eget vehicula. Praesent gravida, diam sit amet venenatis vestibulum, diam odio elementum ex, sed feugiat nisl eros dapibus dolor. Quisque efficitur dui ipsum, nec tempus augue luctus nec', 'f', 't'),
+(2, 'Martin | Houston, TX', 'Nunc rutrum ullamcorper nunc et tincidunt. Mauris leo augue, rhoncus vel suscipit quis, dictum sed risus. Ut ultrices risus ut mauris vehicula feugiat vehicula id mauris. Vestibulum commodo risus tempor massa finibus sodales. Morbi nec dolor in magna mollis congue.', 't', 't');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cm_tours`
 --
 
@@ -190,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `cm_tours` (
 
 INSERT INTO `cm_tours` (`id`, `tourpackageid`, `title`, `seo_url`, `meta_tag_keywords`, `meta_tag_descriptions`, `duration`, `destination`, `short_desc`, `desc`, `tour_map`, `featured_image`, `other_images`, `sortorder`, `is_parent`, `status`, `dateadded`) VALUES
 (1, 1, 'Rajasthan Tour', 'rajasthan-tour', 'meta tag', 'tag desc', '6 Night & 7 Days', 'Jaipur -> Jodhpur -> Bikaner', '<p class=\\"title\\" style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif;\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">From sightseeing and private day tours for Jaipur and', '<p>&nbsp;<span style=\\"color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</span></p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">From sightseeing and private day tours for Jaipur and nearby area to planned tours of Rajasthan and other offbeat tourist destinations, we also offer custom tours to match your specific needs.</p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">Rajasthan Tour Expert is a Jaipur based travel agency established in the Year 2003. The proprietor, Mr. Shabbir Khan, has worked in the travel industry for the last 12 years and has extensive knowledge and experience of tourism.</p>', '', 'http://localhost/rajasthantourexpert/uploads/08-18/1533712884_delhi.jpg', 'a:10:{i:0;s:77:"http://localhost/rajasthantourexpert/uploads/08-18/1533712938_chittorghar.jpg";i:1;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712941_destination5.jpg";i:2;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712945_destination6.jpg";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:6;s:0:"";i:7;s:0:"";i:8;s:0:"";i:9;s:0:"";}', 0, 'f', 't', 1533712949),
-(2, 1, 'Rajasthan Tour', 'rajasthan-tour', 'meta tag', 'tag desc', '', '', '<p class=\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"title\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" style=\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</p>\\\\\\\\r\\\\\\\\n<p style=\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-s', '<p>&nbsp;<span style=\\"color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</span></p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">From sightseeing and private day tours for Jaipur and nearby area to planned tours of Rajasthan and other offbeat tourist destinations, we also offer custom tours to match your specific needs.</p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">Rajasthan Tour Expert is a Jaipur based travel agency established in the Year 2003. The proprietor, Mr. Shabbir Khan, has worked in the travel industry for the last 12 years and has extensive knowledge and experience of tourism.</p>', '<p><iframe src=\\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492483.97256756667!2d73.7321241772587!3d15.347700332586278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sGoa!5e0!3m2!1sen!2sin!4v1532082463158\\" width=\\"100%\\" height=\\"450\\" frameborder=\\"0\\" style=\\"border:0\\" allowfullscreen=\\"\\"></iframe></p>', 'http://localhost/rajasthantourexpert/uploads/08-18/1534962169_destination11.jpg', 'a:10:{i:0;s:77:"http://localhost/rajasthantourexpert/uploads/08-18/1533712938_chittorghar.jpg";i:1;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712941_destination5.jpg";i:2;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712945_destination6.jpg";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:6;s:0:"";i:7;s:0:"";i:8;s:0:"";i:9;s:0:"";}', 0, 'f', 't', 1533712995);
+(2, 1, 'Rajasthan Tour', 'rajasthan-tour', 'meta tag', 'tag desc', '', '', '<p class=\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\&quot;title\\\\\\\\\\\\\\\\\\\\\\\\\\\\&quot;\\" style=\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\&quot;box-sizing:\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</p>', '<p>&nbsp;<span style=\\"color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;\\">Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.</span></p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">From sightseeing and private day tours for Jaipur and nearby area to planned tours of Rajasthan and other offbeat tourist destinations, we also offer custom tours to match your specific needs.</p>\r\n<p style=\\"box-sizing: border-box; margin: 0px 0px 10px; color: rgb(25, 21, 9); font-family: Lato, Arial, Helvetica, sans-serif; font-size: 16px;\\">Rajasthan Tour Expert is a Jaipur based travel agency established in the Year 2003. The proprietor, Mr. Shabbir Khan, has worked in the travel industry for the last 12 years and has extensive knowledge and experience of tourism.</p>', '<p><iframe src=\\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492483.97256756667!2d73.7321241772587!3d15.347700332586278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sGoa!5e0!3m2!1sen!2sin!4v1532082463158\\" width=\\"100%\\" height=\\"450\\" frameborder=\\"0\\" style=\\"border:0\\" allowfullscreen=\\"\\"></iframe></p>', 'http://localhost/rajasthantourexpert/uploads/08-18/1534962169_destination11.jpg', 'a:10:{i:0;s:77:"http://localhost/rajasthantourexpert/uploads/08-18/1533712938_chittorghar.jpg";i:1;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712941_destination5.jpg";i:2;s:78:"http://localhost/rajasthantourexpert/uploads/08-18/1533712945_destination6.jpg";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:6;s:0:"";i:7;s:0:"";i:8;s:0:"";i:9;s:0:"";}', 0, 'f', 't', 1533712995);
 
 -- --------------------------------------------------------
 
@@ -221,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `cm_tour_packages` (
 --
 
 INSERT INTO `cm_tour_packages` (`id`, `pcatid`, `title`, `seo_url`, `meta_tag_keywords`, `meta_tag_descriptions`, `short_desc`, `desc`, `featured_image`, `sortorder`, `is_parent`, `in_footer`, `status`, `dateadded`) VALUES
-(1, 0, 'Rajasthan Tours 1', 'rajasthan-tours-1', '', '', '', '', '', 0, 'f', 't', 't', 0);
+(1, 0, 'Rajasthan Tours 1', 'rajasthan-tours-1', 'Rajasthan Tours 1 Keyworkds', 'Rajasthan Tours 1 Keyworkds desc', '', '<p>&nbsp;<span style=\\"\\\\&quot;color:\\">Curabitur elementum, diam ut rhoncus venenatis, erat nulla dictum odio, id laoreet lacus sapien in ex. Etiam pellentesque sollicitudin nibh vel accumsan. Sed tempus eget tortor eget vehicula. Praesent gravida, diam sit amet venenatis vestibulum, diam odio elementum ex, sed feugiat nisl eros dapibus dolor.</span></p>\r\n<p style=\\"\\\\&quot;box-sizing:\\">Quisque efficitur dui ipsum, nec tempus augue luctus nec. Mauris pretium lectus mi, ut volutpat felis bibendum ac. Maecenas consectetur scelerisque tincidunt. Nunc tincidunt ante augue, a vestibulum quam molestie et. Praesent finibus risus iaculis ipsum maximus viverra.</p>', 'http://localhost/rajasthantourexpert/uploads/08-18/1535563784_header1.jpg', 0, 'f', 't', 't', 0);
 
 -- --------------------------------------------------------
 

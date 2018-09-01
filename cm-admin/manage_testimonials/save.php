@@ -8,7 +8,7 @@ if($function->is_login())
 			$where=array();
 			$data['author']=escape_value($_REQUEST['author']);	
 			$data['testimonials_desc']=escape_value($_REQUEST['testimonials_desc']);	
-			
+			$data['is_featured']=escape_value($_REQUEST['is_featured']);	
 			$data['status']=escape_value($_REQUEST['status']);			
 			$where['id']=$_REQUEST['id'];
 			$db->update( MODULE_TABLE_NAME, $data,$where ) ;
@@ -18,6 +18,7 @@ if($function->is_login())
 		{
 		$data['author']=escape_value($_REQUEST['author']);	
 			$data['testimonials_desc']=escape_value($_REQUEST['testimonials_desc']);			
+			$data['is_featured']=escape_value($_REQUEST['is_featured']);	
 			$data['status']=escape_value($_REQUEST['status']);			
 			
 			$db->insert( MODULE_TABLE_NAME, $data) ;

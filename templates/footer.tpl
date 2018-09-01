@@ -13,7 +13,7 @@
    {if $pagelist[1].title != ''} 
 <li><a href="{$siteurl}{$pagelist[1].seo_url}{$url_suffix}">{$pagelist[1].title}</a></li>
 {/if}
-<li><a href="#">Testimonials</a></li>
+<li><a href="{$siteurl}testimonials{$url_suffix}">Testimonials</a></li>
   <li><a href="{$siteurl}tour-packages{$url_suffix}">Tour Packages</a></li>
   <li><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
           <li><a href="#">Car & Driver Hire</a></li>
@@ -28,7 +28,7 @@
 
         <ul class="ul1">
 		 {foreach from=$footertourpackagelist key=footertourpackagekey item=footertourpackageinfo name=footertourpackageid}
-          <li><a href="{$siteurl}tour_packages/{$footertourpackageinfo.seo_url}{$url_suffix}">{$footertourpackageinfo.title}</a></li>
+          <li><a href="{$siteurl}tour-packages/{$footertourpackageinfo.seo_url}{$url_suffix}">{$footertourpackageinfo.title}</a></li>
 		   {/foreach}  
 
         </ul>

@@ -47,7 +47,21 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								
 							  </div>
 							</div>
-														
+														 <div class="control-group">
+								<label class="control-label" for="selectError">Featured</label>
+								<div class="controls">
+								  <select id="is_featured" name="is_featured" data-rel="chosen">
+								   <?php if(isset($datainfo->is_featured)) { ?>								   
+									<option value="t" <?php if($datainfo->is_featured=='t') { echo "selected"; } ?>>Yes</option>
+									<option value="f" <?php if($datainfo->is_featured=='f') { echo "selected"; } ?>>No</option>
+									 <?php }else { ?>
+									 <option value="t"  selected>Yes</option>
+									<option value="f">No</option>
+									 <?php } ?>
+									
+								  </select>
+								</div>
+							  </div>
 							
 							  <div class="control-group">
 								<label class="control-label" for="selectError">Status</label>

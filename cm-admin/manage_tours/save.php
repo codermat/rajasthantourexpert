@@ -15,7 +15,7 @@ if($function->is_login())
 			$data['destination']=escape_value($_REQUEST['destination']);
 			
 			$data['featured_image']=escape_value($_REQUEST['featured_image']);
-			$data['short_desc']=escape_value($_REQUEST['short_desc']);
+			$data['short_desc']=addslashes($_REQUEST['short_desc']);
 			$data['desc']=addslashes($_REQUEST['desc']);
 			$data['tour_map']=addslashes($_REQUEST['tour_map']);
 				
@@ -37,7 +37,7 @@ if($function->is_login())
 			$data['destination']=escape_value($_REQUEST['destination']);
 			
 			$data['featured_image']=escape_value($_REQUEST['featured_image']);
-			$data['short_desc']=escape_value($_REQUEST['short_desc']);
+			$data['short_desc']=addslashes($_REQUEST['short_desc']);
 			$data['desc']=addslashes($_REQUEST['desc']);	
 			$data['tour_map']=addslashes($_REQUEST['tour_map']);
 			$data['other_images']=serialize($_REQUEST['other_images']);		

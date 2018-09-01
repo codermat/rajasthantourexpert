@@ -54,7 +54,7 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 							  <label class="control-label" for="typeahead">Featured Image</label>
 							  <div class="controls">
 								<input type="hidden"    name="featured_image" value="<?php  if(isset($datainfo->featured_image)) {  echo $datainfo->featured_image; } ?>" id="featured_image" class="span7"   />
-								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=featured_image&nonce=mktnonce" ></iframe>
+								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=featured_image&nonce=mktnonce" ></iframe> (Recommended -> Width: 801px & Height: 281px;)
 <?php if(isset($datainfo->featured_image) && $datainfo->featured_image!='') { ?>
 								<img src="<?php echo SITE_URL;?>thumb.php?src=<?php echo $datainfo->featured_image;?>&w=80&h=80&q=90&zc=0" />
 								<?php } ?>
