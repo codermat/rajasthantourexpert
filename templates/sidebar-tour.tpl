@@ -27,78 +27,29 @@
  <div class="newspace"></div>
 
 <div class="accordion" id="accordion1">
+  {foreach from=$menutourpackagelist key=menutourpackagekey item=menutourpackageinfo name=menutourpackageid}
+       
 		  		<div class="accordion-group">
 	    <div class="accordion-heading">
-	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse9">
-	        	Same Day Trips	        </a>
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#tour_side_list_{$menutourpackageinfo.id}">
+	        	{$menutourpackageinfo.title}        </a>
 	    </div>
-	    <div id="collapse9" class="accordion-body collapse">
+	    <div id="tour_side_list_{$menutourpackageinfo.id}" class="accordion-body collapse {if $datainfo.tourpackageid == $menutourpackageinfo.id}in{/if}">
 	        <div class="accordion-inner">
 	        	<ul class="ul2">		
-		         
-			          <li><a href="#">Jaipur Sightseeing Tour</a></li>					     
-			          <li><a href="#">Balloon Safari Jaipur</a></li>					     
-			         <li><a href="#">Elephant Activities at Jaipur</a></li>
-					 <li><a href="#">Jaipur Samode Day Trip</a></li>
-					 <li><a href="#">Jaipur Abhaneri Day Trip</a></li>
-					 <li><a href="#">Jaipur Ranthambore Day Trip</a></li>
-					 <li><a href="#">Jaipur Pushkar Day Trip</a></li>
-					 				  
+		       {foreach from=$sidebartourslist key=sidebartourskey item=sidebartoursinfo name=sidebartoursid}
+   					{if $menutourpackageinfo.id==$sidebartoursinfo.tourpackageid }
+			          <li><a href="{$siteurl}tours/{$sidebartoursinfo.seo_url}{$url_suffix}">{$sidebartoursinfo.title}</a></li>					     
+			  		{/if}
+			    {/foreach}      
+				  
 			</ul>
 	        </div>
 	    </div>
 	</div>  
-		  
+		   {/foreach}   
 		  
 
-					
-             		  		<div class="accordion-group">
-	    <div class="accordion-heading">
-	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse6">
-	        	Golden Triangle Tours	        </a>
-	    </div>
-	    <div id="collapse6" class="accordion-body collapse">
-	        <div class="accordion-inner">
-	        	<ul class="ul2">		
-		          <li><a href="#">Jaipur Sightseeing Tour</a></li>					     
-			          <li><a href="#">Balloon Safari Jaipur</a></li>					     
-			         <li><a href="#">Elephant Activities at Jaipur</a></li>
-					 <li><a href="#">Jaipur Samode Day Trip</a></li>
-					 <li><a href="#">Jaipur Abhaneri Day Trip</a></li>
-					 <li><a href="#">Jaipur Ranthambore Day Trip</a></li>
-					 <li><a href="#">Jaipur Pushkar Day Trip</a></li>
-					  
-			</ul>
-	        </div>
-	    </div>
-	</div>  
-		  
-		  
-
-					
-             		  		<div class="accordion-group">
-	    <div class="accordion-heading">
-	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse5">
-	        	Rajasthan Tour Packages	        </a>
-	    </div>
-	    <div id="collapse5" class="accordion-body collapse">
-	        <div class="accordion-inner">
-	        	<ul class="ul2">		
-		         
-			          <li><a href="#">Jaipur Sightseeing Tour</a></li>					     
-			          <li><a href="#">Balloon Safari Jaipur</a></li>					     
-			         <li><a href="#">Elephant Activities at Jaipur</a></li>
-					 <li><a href="#">Jaipur Samode Day Trip</a></li>
-					 <li><a href="#">Jaipur Abhaneri Day Trip</a></li>
-					 <li><a href="#">Jaipur Ranthambore Day Trip</a></li>
-					 <li><a href="#">Jaipur Pushkar Day Trip</a></li>
-					  
-			</ul>
-	        </div>
-	    </div>
-	</div>  
-		  
-		  
 
 	
 </div>

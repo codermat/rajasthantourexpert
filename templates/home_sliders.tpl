@@ -27,21 +27,24 @@
       <div class="txt1">Get A quote</div>
       <div class="txt2">Request a quote now</div>
 
-      <form id="rent1" class="form-horizontal">
-
+      <form id="get_a_quote_form" method="post" name="get_a_quote_form" class="form-horizontal" >
+<input type="hidden" name="form_type" value="get_a_quote" >
+<input type="hidden" name="referer" value="{$siteurl}" >
+								
         <div class="form-group car-types">
           
-		  <input type="text" class="form-control" id="inputName" name="name" value="First Name" onBlur="if(this.value=='') this.value='First Name'" onFocus="if(this.value =='First Name' ) this.value=''">
+		  <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Your Name" value="" required >
           
         </div>
         <div class="form-group car-brands">
-           <input type="text" class="form-control" id="inputEmail" name="email" value="E-mail address" onBlur="if(this.value=='') this.value='E-mail address'" onFocus="if(this.value =='E-mail address' ) this.value=''">
+           <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Email Address" value="" required  >
         </div>
         <div class="form-group car-model">
-                    <input type="text" class="form-control" id="inputPhone" name="phone" value="Phone" onBlur="if(this.value=='') this.value='Phone'" onFocus="if(this.value =='Phone' ) this.value=''">
+                    <input type="text" class="form-control" id="inputPhone" name="contact_number" placeholder="Contact No." value="" required >
         </div>
 		<div class="form-group car-model">
-                    <textarea class="form-control" rows="3" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
+                    <textarea class="form-control" rows="3" required id="message" name="message" 
+                                   placeholder="Message"></textarea>
         </div>
 
         <button type="submit" class="btn-default btn-rent-submit">book now</button>

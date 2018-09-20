@@ -45,7 +45,37 @@ $servicelist=$function->object_to_array($function->get_data_list(GLOBAL_SERVICE_
 
 $smarty->assign("servicelist", $servicelist);
 
+
 ////////// End of Code to Get Services /////////////
+
+///////// Quotation Success Message ///////
+if(isset($_SESSION['success_message']))
+{
+	$smarty->assign("success_message", $_SESSION['success_message']);
+	unset($_SESSION['success_message']);
+}
+//////// End of Quotation Success Message ////////////
+
+/////////// Code Start for Welcome Page Section //////////
+$welcomepageinfo=$function->object_to_array($function->get_data_info(GLOBAL_PAGE_TABLE,$newoption['welcome_page_id'],'id'));
+
+$welcomepageinfo['short_desc']=html_entity_decode($welcomepageinfo['short_desc']);
+
+$welcomepageinfo['short_desc'] = str_replace("\n", "", $welcomepageinfo['short_desc']);
+$welcomepageinfo['short_desc'] = str_replace("\r", "", $welcomepageinfo['short_desc']);$smarty->assign("welcomepageinfo", $welcomepageinfo);
+
+///////////// End of Code for Welcome Page Section //////////
+
+/////////// Code Start for About India Page Section //////////
+$indiapageinfo=$function->object_to_array($function->get_data_info(GLOBAL_PAGE_TABLE,$newoption['about_inda_page_id'],'id'));
+
+$indiapageinfo['short_desc']=html_entity_decode($indiapageinfo['short_desc']);
+
+$indiapageinfo['short_desc'] = str_replace("\n", "", $indiapageinfo['short_desc']);
+$indiapageinfo['short_desc'] = str_replace("\r", "", $indiapageinfo['short_desc']);
+$smarty->assign("indiapageinfo", $indiapageinfo);
+
+///////////// End of Code for About India Page Section //////////
 
 $smarty->display('index.tpl');
 ?>

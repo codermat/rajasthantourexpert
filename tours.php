@@ -33,6 +33,11 @@ $relatedtourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOU
 $smarty->assign("relatedtourslist", $relatedtourslist);
 ////////////// End of Code to Get Related Tours List ////////////
 
+///////////// Code Start to get Sidebar Tours List /////////
+$sidebartourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,tourpackageid",'t','status',$orderbyfield='title',$order='asc',1,9999));
+$smarty->assign("sidebartourslist", $sidebartourslist);
+
+////////////// End of Code to Get Related Tours List ////////////
 
 $smarty->display('tours-info.tpl');
 

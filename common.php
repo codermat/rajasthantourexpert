@@ -1,8 +1,8 @@
 <?php
 
 require_once('cm-admin/assets/load.php');
-
 require_once('google_recaptchalib.php');
+require_once('send_enquiry.php');
 $smarty = new Smarty;
 
 $smarty->debugging = false;
@@ -39,7 +39,10 @@ $socialoptions['linkedin']=$socialoptions['LinkedIn'];
 $socialoptions['instagram']=$socialoptions['Instagram'];
 $socialoptions['pin']=$socialoptions['Pin Interest'];
 $socialoptions['gplus']=$socialoptions['Google Plus'];
+$socialoptions['tumbler']=$socialoptions['Tumbler'];
 $socialoptions['rssfeed']=$socialoptions['RSS Feed'];
+$socialoptions['youtube']=$socialoptions['Youtube'];
+$socialoptions['twitter']=$socialoptions['Twitter'];
 $smarty->assign("socialoptions", $socialoptions);
 
 $is_home='false';

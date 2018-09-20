@@ -20,6 +20,7 @@
       <div class="col-sm-12 col-md-9 col-lg-9">
 
         <h1>{$datainfo.title}</h1>
+		
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -40,8 +41,7 @@
       <img src="{$sliderimage}" >
     </div>
     {/if}
-   {/foreach}    
-   
+   {/foreach}      
   
   </div>
 
@@ -55,7 +55,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-       
+    
+	
+	   
        <div class="newspace"></div>
 	   
        	{if $datainfo.duration!=''}
@@ -84,6 +86,34 @@
 
   {$datainfo.tour_map|stripslashes}
 	   
+ <div class="newspace"></div>
+        <h2>Tour Images</h2>
+
+        <div class="row">
+		{foreach from=$sliderimages key=imagekey item=sliderimage name=sliderimages}
+   	{if $sliderimage!=''} 
+     
+	   <div class="col-sm-3">
+            <div class="thumb2">
+              <div class="thumbnail clearfix">
+               
+                  <figure class="">
+                    <img src="{$templateurl}images/destination1.jpg" alt="" class="img-responsive">
+                  </figure>             
+              </div>
+            </div>
+          </div>
+	 {if $imagekey==3}
+	  </div>
+		<div class="row">
+	 {/if}
+   
+    {/if}
+   {/foreach}    
+   
+         
+        </div>
+
 
        
  <div class="newspace"></div>

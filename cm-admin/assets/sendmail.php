@@ -37,7 +37,7 @@ function send_mail($mailid, $mailsubject, $mailbody)
 		$mailheader="<div style='background: #fff;width:100%'><img src='$logourl' width='240' /></div> \n\n <hr> <br><br>";
 		$mailfooter="<br><br>
 					Regards,
-					<br> <h2>Impexly.com</h2>
+					<br> <h2>Rajasthan Tour Expert</h2>
 					<br><br><hr>";
 		$mailbody=	$mailheader.$mailbody.$mailfooter;
 		
@@ -59,47 +59,5 @@ function send_mail($mailid, $mailsubject, $mailbody)
 
 
 
-////////// Contact Form Email Send Code Starts from here ////////////
-if(isset($_POST['form_type']) && $_POST['form_type']=='contact_us')
-{
-// your secret key
-$secret = GOOGLE_RECAPTCHA_KEY;
- 
-// empty response
-$response = null;
- 
-// check secret key
-$reCaptcha = new ReCaptcha($secret);
-if ($_POST["g-recaptcha-response"]) {
-    $response = $reCaptcha->verifyResponse(
-        $_SERVER["REMOTE_ADDR"],
-        $_POST["g-recaptcha-response"]
-    );
-}
-$referer=$_POST['referer'];
-if ($response != null && $response->success)
- {
 
-				$mailsubject="Contact us Enquiry from ".MAILFROMNAME;		
-				$enquirytemplate=getmailtemplate("contact_enquiry");				
-					
-				$findarray=array('#MESSAGE#','#USER_NAME#','#SUBJECT#','#USER_EMAIL#','#CONTACT_NUMBER#');
-				
-				$replacearray=array($_POST['message'],$_POST['user_name'],$_POST['subject'],$_POST['user_email'],$_POST['contact_number']);
-				
-				$mailbody=str_replace($findarray,$replacearray,$enquirytemplate);								
-	
-	send_mail(NOTIFYMAIL, $mailsubject, $mailbody);
-}else
-{
-	$_SESSION['success_message']='<div ><h3 style="color:red">Please confirm that you are human not robot.</h3> </div>';			
-$function->cm_redirect($referer);
-exit;
-}
-
-$_SESSION['success_message']='<div ><h3 style="color:#0B610B">Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.</h3></div>';			
-$function->cm_redirect($referer);
-exit;
-}
-///////// Contact Form Email Send Code Ends here //////////////
 ?>

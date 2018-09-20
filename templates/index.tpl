@@ -7,15 +7,10 @@
     <div class="row">
       <div class="col-md-6">
 
-        <h1>Welcome to Rajasthan Tour Experts</h1>
+        <h1>{$welcomepageinfo.title}</h1>
 
-        <p class="title">
-          Rajasthan Tour Expert is a specialist travel agency catering to travelers who want a special, authentic and unforgettable experience in Rajasthan.     </p>
-        <p>
-         From sightseeing and private day tours for Jaipur and nearby area to planned tours of Rajasthan and other offbeat tourist destinations, we also offer custom tours to match your specific needs.</p>
-		 <p>Rajasthan Tour Expert is a Jaipur based travel agency established in the Year 2003. The proprietor, Mr. Shabbir Khan, has worked in the travel industry for the last 12 years and has extensive knowledge and experience of tourism.</p>
-
-        <a href="#" class="btn-default btn1">read more</a>
+      {$welcomepageinfo.short_desc|stripslashes}
+        <a href="{$siteurl}{$welcomepageinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
 
         <br><br>
       </div>
@@ -48,9 +43,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-6 col-md-6 col-md-offset-6 col-lg-4 col-lg-offset-8">
-          <div class="txt1">About India</div>
-          <div class="txt2">and Top-Rated Attractions of india</div>
-          <a href="#" class="btn-default btn2">more details</a>        </div>
+          <div class="txt1">{$indiapageinfo.title}</div>
+          <div class="txt2">{$indiapageinfo.short_desc|stripslashes}</div>
+          <a href="{$siteurl}{$indiapageinfo.seo_url}{$url_suffix}" class="btn-default btn2">more details</a>        </div>
       </div>
     </div>
   </div>

@@ -99,6 +99,33 @@
 </div>
 {/if}
 </div>
+
 <script src="{$templateurl}js/bootstrap.min.js"></script>
+{if $success_message!=''}
+<div id="successmodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:none;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+       <div class="alert alert-success">
+ {$success_message}
+</div>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+<script>
+ $(window).load(function(){        
+   $('#successmodal').modal('show');
+    });
+	</script>
+{/if}
 </body>
 </html>

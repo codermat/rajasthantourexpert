@@ -27,22 +27,21 @@
 
         <div class="row">
           <div class="col-sm-6">
-
+{if $options.address!=''}
             <p>
               <b>Address:</b><br>
-2, Near Loco, Yaadon ka Chowk, Hasanpura (A), Khatipura Road, Jaipur 302006 (Rajasthan)
+{$options.address}
 <br>
-<a href="#">Get Directions</a>
-            </p>
-
+          </p>
+ {/if} 
           </div>
           <div class="col-sm-6">
 
             <p>
-              <b>Freephone:</b>  +91- 8824101046<br>
-<b>Telephone:</b>&nbsp;  +91- 8824101046<br>
-<b>E-mail:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     <a href="mailto:booking@rajasthantourexpert.com">booking@rajasthantourexpert.com</a>
-            </p>
+           {if $options.contact_no!=''}   
+			  <b>Telephone:</b>&nbsp;  {$options.contact_no}<br>{/if}
+{if $options.admin_email!=''} <b>E-mail:</b><br>    <a href="mailto:{$options.admin_email}">{$options.admin_email}</a>
+       {/if}     </p>
 
           </div>
         </div>
@@ -53,11 +52,23 @@
 
         <div class="social2_wrapper">
           <ul class="social2 clearfix">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+		   
+		    {if $socialoptions.facebook!=''}
+            <li><a href="{$socialoptions.facebook}"><i class="fa fa-facebook"></i></a></li>
+			{/if}
+			 {if $socialoptions.twitter!=''}
+            <li><a href="{$socialoptions.twitter}"><i class="fa fa-twitter"></i></a></li>
+			{/if}
+			 {if $socialoptions.linkedin!=''}
+            <li><a href="{$socialoptions.linkedin}"><i class="fa fa-linkedin"></i></a></li>
+			{/if} 
+			
+			  {if $socialoptions.instagram!=''}
+            <li><a href="{$socialoptions.instagram}"><i class="fa fa-instagram"></i></a></li>
+			{/if}
+			 {if $socialoptions.youtube!=''}
+            <li><a href="{$socialoptions.youtube}"><i class="fa fa-youtube"></i></a></li>
+			{/if}
           </ul>
         </div>
 
@@ -67,12 +78,8 @@
         <p>
           <b>Our Location:</b>
         </p>
-
-        <div id="google_map"></div>
-
-
-
-
+		
+        <div> {if $options.google_map_code!=''} {$options.google_map_code} {/if}  </div>
 
 
       </div>
@@ -84,32 +91,42 @@
 
           <div id="note"></div>
           <div id="fields">
-            <form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!');">
+            <form id="ajax-contact-form" class="form-horizontal"  action="" role="form" method="post" >
+			<input type="hidden" name="form_type" value="contact_us" >
+							<input type="hidden" name="referer" value="{$siteurl}{$pagelist[4]['seo_url']}{$url_suffix}" >
+								{if $success_message!=''}
+								   <div class="row">						
+									<div class="col-sm-12"><div class="form-group">			
+										{$success_message}
+									</div>
+								</div></div>
+								{/if}
               <div class="row">
+			  
                 <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="inputName">First Name</label>
-                      <input type="text" class="form-control" id="inputName" name="name" value="First Name" onBlur="if(this.value=='') this.value='First Name'" onFocus="if(this.value =='First Name' ) this.value=''">
+                      <label for="inputName">First Name*</label>
+                      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="" required >
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="inputLName">Last Name</label>
-                      <input type="text" class="form-control" id="inputLName" name="lname" value="Last Name" onBlur="if(this.value=='') this.value='Last Name'" onFocus="if(this.value =='Last Name' ) this.value=''">
+                      <label for="inputLName">Last Name*</label>
+                      <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="" required >
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="inputEmail">Email</label>
-                      <input type="text" class="form-control" id="inputEmail" name="email" value="E-mail address" onBlur="if(this.value=='') this.value='E-mail address'" onFocus="if(this.value =='E-mail address' ) this.value=''">
+                      <label for="inputEmail">Email*</label>
+                      <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Email Address" value="" required  >
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                      <label for="inputPhone">Phone</label>
-                      <input type="text" class="form-control" id="inputPhone" name="phone" value="Phone" onBlur="if(this.value=='') this.value='Phone'" onFocus="if(this.value =='Phone' ) this.value=''">
+                      <label for="inputPhone">Phone*</label>
+                      <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Contact No." value="" required >
                   </div>
                 </div>
               </div>
@@ -118,23 +135,24 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                       <label for="inputMessage">Your Message</label>
-                      <textarea class="form-control" rows="14" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='Message'"
-                                  onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
+                      <textarea class="form-control" rows="14" id="message" name="message" 
+                                   placeholder="Message" ></textarea>
                   </div>
                 </div>
               </div>
-
+			  <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+			<div class="g-recaptcha" data-sitekey="6LdgNXEUAAAAAEZvZ5reHlgvbiVRBbY0G6QeRITP"></div>
+			  </div>
+                </div>
+              </div>
               <button type="submit" class="btn-default btn-cf-submit">submit</button>
             </form>
           </div>
 
 
         </div>
-
-
-
-
-
 
 
 

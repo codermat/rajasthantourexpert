@@ -72,7 +72,7 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								</div>
 							  </div>
 							
-							<div class="control-group" style="display:none;">
+							<div class="control-group" >
 							  <label class="control-label" for="typeahead">Short Desc.</label>
 							  <div class="controls">
 								

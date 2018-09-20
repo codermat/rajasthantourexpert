@@ -19,8 +19,8 @@ define("SEO_SUFFIX",".html");
 
 ////////// Very Very Important ////////
 define("SECURITY_SALT","rajasthan_tour");
-define("GOOGLE_RECAPTCHA_KEY","6Lenmk4UAAAAAJ9n4QtPsqlT8lQXHPh02OuDtFz1");
-define("GOOGLE_RECAPTCHA_PUBLIC_KEY","6Lenmk4UAAAAAEIRyzz-O0MtIfiPjMoP-1bll9X7");
+define("GOOGLE_RECAPTCHA_KEY","6LdgNXEUAAAAACiGl3a8W3o3ZyQbvgoFXhctw54t");
+define("GOOGLE_RECAPTCHA_PUBLIC_KEY","6LdgNXEUAAAAAEZvZ5reHlgvbiVRBbY0G6QeRITP");
 
 //////////// Should not be Changed //////
 ////////////////// End of Site Basic Configuration //////////

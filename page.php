@@ -36,6 +36,11 @@ $testimonialslist=$function->object_to_array($function->get_data_list(GLOBAL_TES
 
 $smarty->assign("testimonialslist", $testimonialslist);
 
+if(isset($_SESSION['success_message']))
+{
+$smarty->assign("success_message", $_SESSION['success_message']);
+unset($_SESSION['success_message']);
+}
 ////////// End of Code to Get Featured Testimonials /////////////
 if($pageinfo['id']!='')
 {
