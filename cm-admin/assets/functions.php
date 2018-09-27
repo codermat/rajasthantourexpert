@@ -441,21 +441,21 @@ function get_pagination($baseurl='',$NoOfRecords='',$limit,$paged)
 {
 $totalrecords=count($NoOfRecords);
 $totalpages = 0;
-					echo $totalrecords;
+					
 $totalpages = ceil($totalrecords/$limit);
 
-$pagination='<nav aria-label="navigation">
-    <ul class="pagination justify-content-end">';
+$pagination='<div class="pager_wrapper">
+    <ul class="pager clearfix">';
 	if($paged==1)
 	{		
-		$previouslink='<li class="page-item disabled">
-     <a class="page-link" href="javascript:void();" tabindex="-1">Previous</a>
+		$previouslink='<li class="prev disabled">
+     <a class="page-link" href="javascript:void();" tabindex="-1"><i class="fa fa-angle-left"></i>Previous</a>
     </li>';
 	
 	}else
 	{		
-		$previouslink='<li class="page-item">
-      <a class="page-link" href="'.$baseurl.($paged-1).SEO_SUFFIX.'" tabindex="-1">Previous</a>
+		$previouslink='<li class="prev">
+      <a class="page-link" href="'.$baseurl.($paged-1).SEO_SUFFIX.'" tabindex="-1"><i class="fa fa-angle-left"></i>Previous</a>
     </li>';
 	
 	}
@@ -463,15 +463,15 @@ $pagination='<nav aria-label="navigation">
 	{
 		
 		 $nextlink='
-    <li class="page-item disabled">
-      <a class="page-link" href="javascript:void();">Next</a>
+    <li class="next disabled">
+      <a class="page-link" href="javascript:void();">Next<i class="fa fa-angle-right"></i></a>
     </li>';
 	
 	}else
 	{
 		 $nextlink='
-    <li class="page-item">
-      <a class="page-link" href="'.$baseurl.($paged+1).SEO_SUFFIX.'">Next</a>
+    <li class="next">
+      <a class="page-link" href="'.$baseurl.($paged+1).SEO_SUFFIX.'">Next<i class="fa fa-angle-right"></i></a>
     </li>';
 	}
 	$pagination.=$previouslink;
@@ -527,7 +527,7 @@ if($paged>5)
 	} */
 	$pagination.=$nextlink;
  $pagination.='</ul>
-</nav>';
+</div>';
 if($totalrecords>0)
 {
 	return $pagination;

@@ -35,7 +35,7 @@ if(isset($_REQUEST['tourpackageid']) && $_REQUEST['tourpackageid']!='')
 {
 	$tourpackageid=$_REQUEST['tourpackageid'];
 
-$tourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",1,'tourpackageid',$orderbyfield='rand(), title',$order='asc',$paged,12));
+$tourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",$tourpackageinfo['id'],'tourpackageid',$orderbyfield='rand(), title',$order='asc',$paged,12));
 
 $smarty->assign("tourslist", $tourslist);
 

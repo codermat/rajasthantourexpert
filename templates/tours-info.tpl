@@ -19,8 +19,8 @@
     <div class="row">
       <div class="col-sm-12 col-md-9 col-lg-9">
 
-        <h1>{$datainfo.title}</h1>
-		
+        <h1>Tour Itinerary</h1>
+	{if $datainfo.tourpackageid==1}	
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -54,11 +54,11 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-    
+</div> <div class="newspace"></div>
+ {/if}   
 	
 	   
-       <div class="newspace"></div>
+      
 	   
        	{if $datainfo.duration!=''}
 		  <div class="col-sm-6 bgtop">
@@ -85,7 +85,7 @@
 <h1>Tour Map</h1>
 
   {$datainfo.tour_map|stripslashes}
-	   
+{if $datainfo.tourpackageid!=1}		   
  <div class="newspace"></div>
         <h2>Tour Images</h2>
 
@@ -98,7 +98,7 @@
               <div class="thumbnail clearfix">
                
                   <figure class="">
-                    <img src="{$templateurl}images/destination1.jpg" alt="" class="img-responsive">
+                    <img src="{$sliderimage}" alt="" class="img-responsive">
                   </figure>             
               </div>
             </div>
@@ -113,7 +113,7 @@
    
          
         </div>
-
+ {/if}
 
        
  <div class="newspace"></div>

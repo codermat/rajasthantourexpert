@@ -71,7 +71,7 @@ $smarty->assign("sidebarsecondadinfo", $sidebarsecondadinfo);
 
 ///////// End of Code for Tour Sidebar Advertisement ////////
 //////// Code Start to Footer Destination Link ////////
-$menutourpackagelist=$function->object_to_array($function->get_data_list(GLOBAL_TOUR_PACKAGE_TABLE,"id,title,seo_url",'t','status',$orderbyfield='title, title',$order='asc',1,8));
+$menutourpackagelist=$function->object_to_array($function->get_data_list(GLOBAL_TOUR_PACKAGE_TABLE,"id,title,seo_url",'t','status',$orderbyfield='id',$order='asc',1,8));
 
 $smarty->assign("menutourpackagelist", $menutourpackagelist);
 $smarty->assign("sidebartourspackagelist", $menutourpackagelist);

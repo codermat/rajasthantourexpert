@@ -8,6 +8,7 @@ if($function->is_login())
 			$where=array();
 			$data['title']=escape_value($_REQUEST['title']);					
 			$data['seo_url']=escape_value($function->seo_url($_REQUEST['title']));	
+			$data['meta_title']=escape_value($_REQUEST['meta_title']);	
 			$data['meta_tag_keywords']=escape_value($_REQUEST['meta_tag_keywords']);			
 			$data['meta_tag_descriptions']=escape_value($_REQUEST['meta_tag_descriptions']);
 			$data['featured_image']=escape_value($_REQUEST['featured_image']);
@@ -23,7 +24,8 @@ if($function->is_login())
 		}else
 		{
 			$data['title']=escape_value($_REQUEST['title']);			
-			$data['seo_url']=escape_value($function->seo_url($_REQUEST['title']));	
+			$data['seo_url']=escape_value($function->seo_url($_REQUEST['title']));
+			$data['meta_title']=escape_value($_REQUEST['meta_title']);		
 			$data['meta_tag_keywords']=escape_value($_REQUEST['meta_tag_keywords']);			
 			$data['meta_tag_descriptions']=escape_value($_REQUEST['meta_tag_descriptions']);
 			$data['featured_image']=escape_value($_REQUEST['featured_image']);

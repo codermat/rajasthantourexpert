@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>{$options.meta_tag_title}{if $is_home eq 'false'} {if $datainfo.title!=''} |  {$datainfo.title} {/if} {/if}</title>
+<head><title>{$options.meta_tag_title}{if $is_home eq 'false'} {if $datainfo.meta_title!=''} |  {$datainfo.meta_title} {/if} {/if}</title>
 <meta name="keywords" content="{$options.meta_tag_keywords} {$datainfo.meta_tag_keywords} " />
 <meta name="description" content="{$options.meta_tag_descriptions} {$datainfo.meta_tag_descriptions}" />
 <meta charset="utf-8">
@@ -90,8 +90,10 @@
 		   
 		    <li {if $activepage eq 'destinations'}class="active"{/if}><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
             
+           {if $pagelist[5].title != ''} 
+           	 <li  {if $datainfo.seo_url eq $pagelist[5].seo_url}class="active"{/if} ><a href="{$siteurl}{$pagelist[5].seo_url}{$url_suffix}">{$pagelist[5].title}</a></li>
+             {/if}
            
-            <li><a href="#">Car & Driver Hire</a></li>
             {if $pagelist[4].title != ''} 
            	 <li  {if $datainfo.seo_url eq $pagelist[4].seo_url}class="active"{/if} ><a href="{$siteurl}{$pagelist[4].seo_url}{$url_suffix}">{$pagelist[4].title}</a></li>
              {/if}

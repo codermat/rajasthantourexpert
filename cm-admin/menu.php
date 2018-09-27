@@ -27,6 +27,14 @@
 		
 		</ul>	
 		</li>
+		<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_blog/')) {?> class="active" <?php } ?>>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Manage Blog</span><span class="label label-important"></span></a>
+													<ul style="display:none;">
+				<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_blog/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_blog"><i class="icon-tasks"></i><span class="hidden-tablet"> View Posts</span></a></li>	
+								
+		
+		</ul>	
+		</li>
         	<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_services/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_services"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Services </span></a></li>
 			<li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_testimonials/')) {?> class="active" <?php } ?> ><a href="<?php echo BASE_ADMIN_URL;?>manage_testimonials"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Manage Testimonials </span></a></li>
 <li <?php if(strstr($_SERVER['REQUEST_URI'],'manage_email_templates/')) {?> class="active" <?php } ?>><a href="<?php echo BASE_ADMIN_URL;?>manage_email_templates"><i class="icon-list-alt"></i><span class="hidden-tablet"> Email Templates</span></a></li>																		

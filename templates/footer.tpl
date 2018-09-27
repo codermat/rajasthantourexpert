@@ -14,9 +14,12 @@
 <li><a href="{$siteurl}{$pagelist[1].seo_url}{$url_suffix}">{$pagelist[1].title}</a></li>
 {/if}
 <li><a href="{$siteurl}testimonials{$url_suffix}">Testimonials</a></li>
+ <li><a href="{$siteurl}blog{$url_suffix}">Blog</a></li>
   <li><a href="{$siteurl}tour-packages{$url_suffix}">Tour Packages</a></li>
   <li><a href="{$siteurl}destinations{$url_suffix}">Destinations</a></li>
-          <li><a href="#">Car & Driver Hire</a></li>
+       {if $pagelist[5].title != ''} 
+           	 <li><a href="{$siteurl}{$pagelist[5].seo_url}{$url_suffix}">{$pagelist[5].title}</a></li>
+             {/if}
    {if $pagelist[4].title != ''} 
 <li><a href="{$siteurl}{$pagelist[4].seo_url}{$url_suffix}">{$pagelist[4].title}</a></li>
 {/if}
@@ -24,7 +27,7 @@
       </div>
       <div class="col-sm-3">
 
-        <div class="bot1_title">RAJASTHAN TOUR PACKAGES</div>
+        <div class="bot1_title">TOUR PACKAGES</div>
 
         <ul class="ul1">
 		 {foreach from=$footertourpackagelist key=footertourpackagekey item=footertourpackageinfo name=footertourpackageid}

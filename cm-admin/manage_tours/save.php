@@ -9,6 +9,8 @@ if($function->is_login())
 			$data['title']=escape_value($_REQUEST['title']);					
 			$data['seo_url']=escape_value($function->seo_url($_REQUEST['title']));	
 			$data['tourpackageid']=escape_value($_REQUEST['tourpackageid']);
+			$data['start_destination']=escape_value($_REQUEST['start_destination']);
+			$data['meta_title']=escape_value($_REQUEST['meta_title']);	
 			$data['meta_tag_keywords']=escape_value($_REQUEST['meta_tag_keywords']);			
 			$data['meta_tag_descriptions']=escape_value($_REQUEST['meta_tag_descriptions']);
 			$data['duration']=escape_value($_REQUEST['duration']);
@@ -31,6 +33,8 @@ if($function->is_login())
 			$data['title']=escape_value($_REQUEST['title']);			
 			$data['seo_url']=escape_value($function->seo_url($_REQUEST['title']));	
 			$data['tourpackageid']=escape_value($_REQUEST['tourpackageid']);
+			$data['start_destination']=escape_value($_REQUEST['start_destination']);
+			$data['meta_title']=escape_value($_REQUEST['meta_title']);	
 			$data['meta_tag_keywords']=escape_value($_REQUEST['meta_tag_keywords']);			
 			$data['meta_tag_descriptions']=escape_value($_REQUEST['meta_tag_descriptions']);
 			$data['duration']=escape_value($_REQUEST['duration']);

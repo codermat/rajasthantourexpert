@@ -35,10 +35,10 @@
 		{foreach from=$tourslist key=tourkey item=toursinfo name=tourid}
           <div class="col-sm-4">
             <div class="services1">
-            {if $toursinfo.featured_image!=''}    <figure><img src="{$toursinfo.featured_image}" alt="{$toursinfo.title}" title="{$toursinfo.title}" class="img-responsive"></figure>{/if}
+            {if $toursinfo.featured_image!=''}    <figure> <a href="{$siteurl}{$datainfo.seo_url}/{$toursinfo.seo_url}{$url_suffix}"><img src="{$toursinfo.featured_image}" alt="{$toursinfo.title}" title="{$toursinfo.title}" class="img-responsive"></a></figure>{/if}
               <div class="txt1">{$toursinfo.title}</div>
               <div class="txt2">{$toursinfo.short_desc|stripslashes} </div>
-              <a href="{$siteurl}tours/{$toursinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
+              <a href="{$siteurl}{$datainfo.seo_url}/{$toursinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
             </div>
           </div>
 		 {if $tourkey%3 == 2}					

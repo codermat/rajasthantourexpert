@@ -2,7 +2,7 @@
 
 require_once('assets/load.php');
 // $function->cm_password_decryption("c3RvbmViZWFkczEyMzQ1Ng==");
-echo $function->cm_password_encryption('admin@123');
+//$function->cm_password_encryption('admin@123');
 if(isset($_REQUEST['loginid']))
 {
 	require_once('logincheck.php');	

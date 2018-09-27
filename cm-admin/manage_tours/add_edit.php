@@ -45,7 +45,13 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								  </select>
 								</div>
 							  </div>
-						
+						<div class="control-group">
+							  <label class="control-label" for="typeahead">Meta Title</label>
+							  <div class="controls">
+								<input type="text" name="meta_title" class="span7 typeahead" value="<?php if(isset($datainfo->meta_title)) { echo $datainfo->meta_title; } ?>" id="meta_title" >
+								
+							  </div>
+							</div>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Meta tag Keywords</label>
 							  <div class="controls">
@@ -75,6 +81,17 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 								
 							  </div>
 							</div>
+							 <div class="control-group">
+								<label class="control-label" for="selectError">Tour Starts from</label>
+								<div class="controls">
+								 	  <select id="start_destination" name="start_destination" data-rel="chosen">
+                                      <option value="">Select Tour Start Destination</option>
+								<?php
+								$function->get_dropdown_list(GLOBAL_DESTINATIONS_TABLE,"id","title",$datainfo->start_destination);
+								?>
+								  </select>
+								</div>
+							  </div>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Thumbnail Image</label>
 							  <div class="controls">
@@ -134,7 +151,7 @@ $oFCKeditor->Create() ;
 							  <label class="control-label" for="typeahead">Other Images <?php echo $i+1;?></label>
 							  <div class="controls">
 								<input type="text"    name="other_images[]" value="<?php  if(isset($other_images[$i])) {  echo $other_images[$i]; } ?>" id="other_images_<?php echo $i;?>" class="span7"   />
-								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=other_images_<?php echo $i;?>&nonce=mktnonce" ></iframe> (Recommended -> Width: 1063px & Height: 400px;)
+								   <iframe name="mktlogoframe" id="upload_target" style="border: none; width:100%; height: 75px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="<?php echo BASE_ADMIN_URL;?>/upload/index.php?img=other_images_<?php echo $i;?>&nonce=mktnonce" ></iframe> (Recommended -> Width: 1063px & Height: 400px;) / (Recommended -> Width: 348px & Height: 250px;)
 <?php if(isset($other_images[$i]) && $other_images[$i]!='') { ?>
 								<img src="<?php echo SITE_URL;?>thumb.php?src=<?php echo $other_images[$i];?>&w=80&h=80&q=90&zc=0" />
 								<?php } ?>

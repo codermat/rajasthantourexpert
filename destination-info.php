@@ -4,15 +4,15 @@ require_once("common.php");
 $activepage='destinations';
 $smarty->assign("activepage", $activepage);
 
-$tourinfo=$function->object_to_array($function->get_data_info(GLOBAL_DESTINATIONS_TABLE,$_REQUEST['destinationid'],'seo_url'));
+$destinationinfo=$function->object_to_array($function->get_data_info(GLOBAL_DESTINATIONS_TABLE,$_REQUEST['destinationid'],'seo_url'));
 
-$tourinfo['short_desc']=html_entity_decode($tourinfo['short_desc']);
-$tourinfo['desc']=html_entity_decode($tourinfo['desc']);
+$destinationinfo['short_desc']=html_entity_decode($destinationinfo['short_desc']);
+$destinationinfo['desc']=html_entity_decode($destinationinfo['desc']);
 
-$tourinfo['short_desc'] = str_replace("\n", "", $tourinfo['short_desc']);
-$tourinfo['short_desc'] = str_replace("\r", "", $tourinfo['short_desc']);
-$tourinfo['desc'] = str_replace("\n", "", $tourinfo['desc']);
-$tourinfo['desc'] = str_replace("\r", "", $tourinfo['desc']);
+$destinationinfo['short_desc'] = str_replace("\n", "", $destinationinfo['short_desc']);
+$destinationinfo['short_desc'] = str_replace("\r", "", $destinationinfo['short_desc']);
+$destinationinfo['desc'] = str_replace("\n", "", $destinationinfo['desc']);
+$destinationinfo['desc'] = str_replace("\r", "", $destinationinfo['desc']);
 if(!is_array($tourinfo))
 {
 	$tourinfo=array();
@@ -21,14 +21,21 @@ if(!is_array($tourinfo))
 //// Slider Images of Tours ////////
 $sliderimages=array();
 
-$sliderimages=unserialize($tourinfo['other_images']);
+$sliderimages=unserialize($destinationinfo['other_images']);
 
 $smarty->assign("sliderimages", $sliderimages);
+
+///////////// Code Start to get Starting Tours from Destination /////////
+$relatedtourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image",$destinationinfo['id'],'start_destination',$orderbyfield='rand()',$order='asc',1,6));
+$smarty->assign("relatedtourslist", $relatedtourslist);
+$smarty->assign("totalrelatedtours", count($relatedtourslist));
+
+////////////// End of Code to Get Starting Tours from Destination  ////////////
 
 $bodyclass='not-front page-about';
 $smarty->assign("bodyclass", $bodyclass);
 
-$smarty->assign("datainfo", $tourinfo);
+$smarty->assign("datainfo", $destinationinfo);
 $smarty->display('destination-info.tpl');
 
 

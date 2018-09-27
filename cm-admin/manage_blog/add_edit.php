@@ -106,7 +106,7 @@ $oFCKeditor->Create() ;
 							}else {
 								$other_images=array();
 							}
-							for($i=0;$i<10;$i++) {?>
+							for($i=0;$i<0;$i++) {?>
 								<div class="control-group">
 							  <label class="control-label" for="typeahead">Other Images <?php echo $i+1;?></label>
 							  <div class="controls">
@@ -117,7 +117,7 @@ $oFCKeditor->Create() ;
 								<?php } ?>
 							  </div>
 							</div>
-								<?php } ?>
+								<?php } /* ?>
 							 <div class="control-group">
 								<label class="control-label" for="selectError">Featured</label>
 								<div class="controls">
@@ -148,7 +148,7 @@ $oFCKeditor->Create() ;
 									
 								  </select>
 								</div>
-							  </div>
+							  </div> <?php */ ?>
 							
 							  <div class="control-group">
 								<label class="control-label" for="selectError">Status</label>

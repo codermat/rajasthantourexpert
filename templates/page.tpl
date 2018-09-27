@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-9 col-lg-9">
 
-        <h1>{$datainfo.title}</h1>
+        <h1>{$datainfo.sub_title}</h1>
 
         <div class="row">
          

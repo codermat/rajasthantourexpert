@@ -35,7 +35,13 @@ if(isset($_REQUEST['id']) && $_REQUEST['id']!='')
 							  </div>
 							</div>
 							
-						
+						<div class="control-group">
+							  <label class="control-label" for="typeahead">Meta Title</label>
+							  <div class="controls">
+								<input type="text" name="meta_title" class="span7 typeahead" value="<?php if(isset($datainfo->meta_title)) { echo $datainfo->meta_title; } ?>" id="meta_title" >
+								
+							  </div>
+							</div>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Meta tag Keywords</label>
 							  <div class="controls">

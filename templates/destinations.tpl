@@ -41,7 +41,7 @@
 		   {foreach from=$destinationslist key=destinationkey item=destinationinfo name=destinationid}
       <div class="col-sm-6 col-md-6 col-lg-3">
         <div class="vehicle1 clearfix">
-          <a href="{$siteurl}destinations/{$destinationinfo.seo_url}{$url_suffix}" class="clearfix">
+          <a href="{$siteurl}destination/{$destinationinfo.seo_url}{$url_suffix}" class="clearfix">
             <figure>
            {if $destinationinfo.featured_image!=''}   <img src="{$destinationinfo.featured_image}" alt="{$destinationinfo.title}" class="img-responsive">{/if}
               <span class="txt1">{$destinationinfo.title}</span>

@@ -12,12 +12,31 @@ RewriteRule ^destinations.htm$ /rajasthantourexpert/destinations.php [L]
 RewriteRule ^destinations/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
 RewriteRule ^destinations/([a-z-0-9]+)/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
 
+RewriteRule ^destination/([a-z-0-9]+).html$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
+RewriteRule ^destination/([a-z-0-9]+)/([a-z-0-9]+).html$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
+RewriteRule ^destination.htm$ /rajasthantourexpert/destinations.php [L]
+RewriteRule ^destination/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1 [L]
+RewriteRule ^destination/([a-z-0-9]+)/([a-z-0-9]+).htm$ /rajasthantourexpert/destination-info.php?destinationid=$1&paged=$2 [L]
+
+RewriteRule ^blog/([a-z-0-9]+).html$ /rajasthantourexpert/blog-info.php?postid=$1 [L]
+RewriteRule ^blog/paged/([a-z-0-9]+).html$ /rajasthantourexpert/blog.php?paged=$1 [L]
+RewriteRule ^blog.htm$ /rajasthantourexpert/blog.php [L]
+RewriteRule ^blog.html$ /rajasthantourexpert/blog.php [L]
+RewriteRule ^blog/$ /rajasthantourexpert/blog.php [L]
+RewriteRule ^blog$ /rajasthantourexpert/blog.php [L]
+RewriteRule ^blog/([a-z-0-9]+).htm$ /rajasthantourexpert/blog-info.php?postid=$1 [L]
+RewriteRule ^blog/paged/([a-z-0-9]+).htm$ /rajasthantourexpert/blog.php?paged=$1 [L]
+
+
 RewriteRule ^tour-packages.html$ /rajasthantourexpert/tour-packages.php [L]
 RewriteRule ^tour-packages/([a-z-0-9]+).html$ /rajasthantourexpert/tour-packages.php?tourpackageid=$1 [L]
 RewriteRule ^tour-packages/([a-z-0-9]+)/([a-z-0-9]+).html$ /rajasthantourexpert/tour-packages.php?tourpackageid=$1&paged=$2 [L]
 
 
+RewriteRule ^([a-z-0-9]+)/([a-z-0-9]+).html$ /rajasthantourexpert/tours.php?tourpackageid=$1&tourid=$2 [L]
+
 RewriteRule ^tours/([a-z-0-9]+).html$ /rajasthantourexpert/tours.php?tourid=$1 [L]
+
 
 RewriteRule ^(.*).html$ /rajasthantourexpert/page.php?pageid=$1 [L]
 
