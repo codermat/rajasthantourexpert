@@ -25,11 +25,18 @@ $smarty->assign("homesecondadinfo", $homesecondadinfo);
 ///////// End of Code for Home Advertisement ////////
 
 
-///////// Code Start to Get Special Product info ///////////////
-$tourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",1,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,10));
+///////// Code Start to Get Special Tours info ///////////////
+$daytourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",1,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,5));
 
-$smarty->assign("tourslist", $tourslist);
+$smarty->assign("daytourslist", $daytourslist);
 
+$rajasthantourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",2,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,10));
+
+$smarty->assign("rajasthantourslist", $rajasthantourslist);
+
+$goldentriangetourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",3,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,10));
+
+$smarty->assign("goldentriangetourslist", $goldentriangetourslist);
 
 ////////// End of Code to Get Tours of a  Tour Packages /////////////
 

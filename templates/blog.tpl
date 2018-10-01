@@ -36,6 +36,12 @@
             <span class="caption">
               <span class="txt3">{$bloginfo.short_desc}  </span>  </span>          </a> </div>
       </div>
+	  
+	    {if $blogkey%4==3}
+	   </div>
+	   <div class="row">
+	       {/if}
+		   
 	  {/foreach} 
 		
         </div>

@@ -18,12 +18,12 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-9 col-lg-9">
-
+		{if $datainfo.sub_title!=''}
         <h1>{$datainfo.sub_title}</h1>
 
        
        <div class="newspace"></div>
-	  
+	  {/if}
 	     <div class="clearfix"></div>
 	
           <div>

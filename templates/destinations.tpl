@@ -47,8 +47,13 @@
               <span class="txt1">{$destinationinfo.title}</span>
               <span class="txt2"><i>more details</i></span>            </figure>
             <span class="caption">
-              <span class="txt3">{$destinationinfo.short_desc}  </span>  </span>          </a> </div>
+              <span class="txt3">{$destinationinfo.short_desc|stripslashes}  </span>  </span>          </a> </div>
       </div>
+     
+	  {if $destinationkey%4==3}
+	   </div>
+	   <div class="row">
+	       {/if}
 	  {/foreach} 
 		
         </div>

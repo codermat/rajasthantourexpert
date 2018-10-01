@@ -11,6 +11,12 @@
               <a href="{$siteurl}tours/{$toursinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
             </div>
           </div>
+		  {if $tourkey%3==2}
+	   </div>
+	   <div class="row">
+	       {/if}
+	 
+		
 		     {/foreach}  
       
    
