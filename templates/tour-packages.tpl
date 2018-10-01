@@ -37,7 +37,10 @@
             <div class="services1">
             {if $toursinfo.featured_image!=''}    <figure> <a href="{$siteurl}{$datainfo.seo_url}/{$toursinfo.seo_url}{$url_suffix}"><img src="{$toursinfo.featured_image}" alt="{$toursinfo.title}" title="{$toursinfo.title}" class="img-responsive"></a></figure>{/if}
               <div class="txt1">{$toursinfo.title}</div>
-              <div class="txt2">{$toursinfo.short_desc|stripslashes} </div>
+              <div class="txt2">
+			  {if $datainfo.id==1}
+			  {$toursinfo.short_desc|stripslashes}{else if} {if $toursinfo.duration!=''} {$toursinfo.duration}{/if}
+	 {if $toursinfo.destination!=''}	<br><strong>Destinations</strong> : {$toursinfo.destination}{/if}{/if} </div>
               <a href="{$siteurl}{$datainfo.seo_url}/{$toursinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
             </div>
           </div>

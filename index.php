@@ -34,7 +34,7 @@ $rajasthantourslist=$function->object_to_array($function->get_data_list(GLOBAL_T
 
 $smarty->assign("rajasthantourslist", $rajasthantourslist);
 
-$goldentriangetourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",3,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,10));
+$goldentriangetourslist=$function->object_to_array($function->get_data_list(GLOBAL_TOURS_TABLE,"id,title,seo_url,short_desc,featured_image,duration,destination",3,'tourpackageid',$orderbyfield='rand(), title',$order='asc',1,5));
 
 $smarty->assign("goldentriangetourslist", $goldentriangetourslist);
 
