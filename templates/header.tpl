@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>{$options.meta_tag_title}{if $is_home eq 'false'} {if $datainfo.meta_title!=''} |  {$datainfo.meta_title} {/if} {/if}</title>
-<meta name="keywords" content="{$options.meta_tag_keywords} {$datainfo.meta_tag_keywords} " />
-<meta name="description" content="{$options.meta_tag_descriptions} {$datainfo.meta_tag_descriptions}" />
+<head><title>{if $is_home eq 'true'} {$options.meta_tag_title}{/if}{if $is_home eq 'false'} {if $datainfo.meta_title!=''} {$datainfo.meta_title} {/if} {/if}</title>
+<meta name="keywords" content="{if $is_home eq 'true'} {$options.meta_tag_keywords}{/if}{$datainfo.meta_tag_keywords} " />
+<meta name="description" content="{if $is_home eq 'true'} {$options.meta_tag_descriptions|stripslashes}{/if}{$datainfo.meta_tag_descriptions|stripslashes}" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

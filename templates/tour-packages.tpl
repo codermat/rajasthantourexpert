@@ -39,8 +39,8 @@
               <div class="txt1">{$toursinfo.title}</div>
               <div class="txt2">
 			  {if $datainfo.id==1}
-			  {$toursinfo.short_desc|stripslashes}{else if} {if $toursinfo.duration!=''} {$toursinfo.duration}{/if}
-	 {if $toursinfo.destination!=''}	<br><strong>Destinations</strong> : {$toursinfo.destination}{/if}{/if} </div>
+			  {$toursinfo.short_desc|stripslashes}{else if} 
+	 {if $toursinfo.short_desc!=''}	<br>{$toursinfo.short_desc|stripslashes}{/if}{/if} </div>
               <a href="{$siteurl}{$datainfo.seo_url}/{$toursinfo.seo_url}{$url_suffix}" class="btn-default btn1">read more</a>
             </div>
           </div>

@@ -51,6 +51,9 @@
   </div>
 </div>
 
+{include file="home_tour_package_bottom.tpl" }
+
+
 {include file="home_destinations.tpl" }
 
 {include file="home_services.tpl" }
